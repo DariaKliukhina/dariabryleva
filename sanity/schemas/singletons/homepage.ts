@@ -19,6 +19,28 @@ export default defineType({
         maxLength: 96,
       },
     }),
+    defineField({
+      title: 'Main Info',
+      name: 'mainInfo',
+      type: 'object',
+      fields: [
+        {
+          name: 'title',
+          title: 'Title',
+          type: 'string',
+        },
+        {
+          name: 'subtitle',
+          title: 'Subtitle',
+          type: 'string',
+        },
+        {
+          name: 'description',
+          title: 'Description',
+          type: 'text',
+        },
+      ]
+    })
   ],
 
   preview: {
