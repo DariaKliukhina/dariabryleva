@@ -4,12 +4,14 @@ import blockContent from './schemas/blockContent'
 import homepage from './schemas/singletons/homepage'
 import siteSettings from './schemas/singletons/siteSettings'
 import technology from './schemas/documents/technology'
+import company from './schemas/documents/company'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [ 
     blockContent,
     siteSettings,
     technology,
+    company,
     
     // pages
     homepage
