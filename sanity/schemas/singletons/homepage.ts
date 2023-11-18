@@ -27,17 +27,17 @@ export default defineType({
         {
           name: 'title',
           title: 'Title',
-          type: 'string',
+          type: 'i18n.string',
         },
         {
           name: 'subtitle',
           title: 'Subtitle',
-          type: 'string',
+          type: 'i18n.string',
         },
         {
           name: 'description',
           title: 'Description',
-          type: 'text',
+          type: 'i18n.text',
         },
       ]
     })

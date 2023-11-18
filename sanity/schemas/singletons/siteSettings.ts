@@ -18,7 +18,7 @@ export default defineType({
     defineField({
       name: 'description',
       title: 'Description',
-      type: 'text',
+      type: 'i18n.text',
     }),
     defineField({
       name: 'logo',
