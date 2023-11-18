@@ -17,6 +17,7 @@
     "react": "^18",
     "react-dom": "^18",
     "sanity": "^3.19.3",
+    "sanity-plugin-i18n-fields": "^1.0.0",
     "styled-components": "^6.1.1"
   },
   "devDependencies": {

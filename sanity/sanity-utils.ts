@@ -1,11 +1,10 @@
-import { createClient } from "next-sanity";
-import { dataset, projectId } from './env'
+import { client } from "./lib/client";
 
-export async function getData(query) {
-  const client = createClient({
-    projectId,
-    dataset,
-  })
-
-  return client.fetch(query);
+export async function getData(query: string, params: object) {
+  try {
+    return client.fetch(query, params);
+  } catch(error) {
+    console.error("Error fetching data:", error);
+    return {error: "Error occurred"};
+  }
 }
