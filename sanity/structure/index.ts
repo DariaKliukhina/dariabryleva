@@ -1,4 +1,4 @@
-import {CogIcon, TagIcon, CodeIcon, HomeIcon} from '@sanity/icons'
+import {CogIcon, TagIcon, CodeIcon, HomeIcon, CaseIcon} from '@sanity/icons'
 import {StructureResolver} from 'sanity/desk'
 
 export const structure: StructureResolver = (S) =>
@@ -13,6 +13,7 @@ export const structure: StructureResolver = (S) =>
       S.divider(),
       S.documentTypeListItem('technology').title('Technologies').icon(CodeIcon),
       S.documentTypeListItem('company').title('Company').icon(HomeIcon),
+      S.documentTypeListItem('position').title('Position').icon(CaseIcon),
 
       S.divider(),
 
