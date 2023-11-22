@@ -1,7 +1,5 @@
-
-import { homepageQuery } from "~/cms-queries/homepage";
+import { homepageQuery } from "~/sanity/cms-queries/homepage";
 import { getData } from "~/sanity/sanity-utils";
-
 
 export default async function Home() {
   const data = await getData(homepageQuery, { lang: "ru" });
