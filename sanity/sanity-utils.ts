@@ -1,6 +1,6 @@
 import { client } from "./lib/client";
 
-export async function getData(query: string, params: object) {
+export async function getData(query: string, params?: object) {
   try {
     return client.fetch(query, params);
   } catch(error) {
