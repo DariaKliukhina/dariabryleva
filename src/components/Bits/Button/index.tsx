@@ -13,7 +13,7 @@ export const PrimaryButton = ({
   ...props
 }: PrimaryButtonProps) => {
   return (
-    <Button variant={variant} size={size}>
+    <Button variant={variant} size={size} {...props}>
       {variant}
     </Button>
   );
