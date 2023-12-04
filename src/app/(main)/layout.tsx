@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "../globals.css";
-import styles from "../page.module.css";
-import { getData } from "@/sanity/sanity-utils";
-import { siteSettingsQuery } from "@/cms-queries";
+import "../globals.scss";
+import { getData } from "~/sanity/sanity-utils";
+import { siteSettingsQuery } from "~/sanity/cms-queries";
+import { PageLayout } from "@/components";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -61,7 +61,7 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <main className={styles.main}>{children}</main>
+        <PageLayout>{children}</PageLayout>
       </body>
     </html>
   );
