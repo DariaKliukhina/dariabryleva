@@ -1,9 +1,11 @@
-import {createTheme, rem, MantineSize, mergeMantineTheme, DEFAULT_THEME } from '@mantine/core';
+import {
+  createTheme,
+  rem,
+  MantineSize,
+  DEFAULT_THEME,
+} from "@mantine/core";
 
-export type FontSize =
-  | MantineSize
-  | "xxl"
-  | "xxs";
+export type FontSize = MantineSize | "xxl" | "xxs";
 export type FontSizes = Record<FontSize, string>;
 export type BreakpointLabels = "xs" | "sm" | "md" | "lg" | "xl" | "xxl";
 export type Breakpoints = Record<BreakpointLabels, number>;
@@ -76,24 +78,27 @@ const zIndex = {
   max: 9999,
 } as const;
 
-const themeOverride = createTheme({
-  primaryColor: "pink",
+export const theme = createTheme({
+  ...DEFAULT_THEME,
+  spacing,
+  primaryColor: "violet",
   fontSizes,
   fontFamily: fontFamily,
-  colors: {
-    // // Add your color
-    // deepBlue: ['#E9EDFC', '#C1CCF6', '#99ABF0' /* ... */],
-    // // or replace default theme color
-    // blue: ['#E9EDFC', '#C1CCF6', '#99ABF0' /* ... */],
-  },
+
+  // colors: {
+  //   // // Add your color
+  //   // deepBlue: ['#E9EDFC', '#C1CCF6', '#99ABF0' /* ... */],
+  //   // // or replace default theme color
+  //   // blue: ['#E9EDFC', '#C1CCF6', '#99ABF0' /* ... */],
+  // },
 
   shadows: {
-    md: '1px 1px 3px rgba(0, 0, 0, .25)',
-    xl: '5px 5px 3px rgba(0, 0, 0, .25)',
+    md: "1px 1px 3px rgba(0, 0, 0, .25)",
+    xl: "5px 5px 3px rgba(0, 0, 0, .25)",
   },
   other: {
-  zIndex,
-
+    zIndex,
+    containerSize: rem(1800),
     // namedColors: {
     //   light: {
     //     app: {
@@ -149,5 +154,3 @@ const themeOverride = createTheme({
     },
   },
 });
-
-export const theme = mergeMantineTheme(DEFAULT_THEME, themeOverride);

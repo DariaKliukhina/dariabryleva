@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "../globals.css";
+import "../globals.scss";
 import { getData } from "~/sanity/sanity-utils";
 import { siteSettingsQuery } from "~/sanity/cms-queries";
-import { PageLayout } from "@/components/PageLayout";
-// import {}
+import { PageLayout } from "@/components";
 
 const inter = Inter({ subsets: ["latin"] });
 
