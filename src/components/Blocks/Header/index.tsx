@@ -22,9 +22,8 @@ export const Header = () => {
     return (
       <Link
         key={link.label}
-        href={link.link}
+        href={"/" + currentLocale + link.link}
         className={classes.link}
-        onClick={(event) => event.preventDefault()}
       >
         {link.label}
       </Link>
@@ -35,7 +34,7 @@ export const Header = () => {
     <header className={classes.header}>
       <PrimaryContainer>
         <div className={classes.inner}>
-          <Link href={"/"}>home</Link>
+          <Link href={"/" + currentLocale}>home</Link>
           <Group gap={5} visibleFrom="sm">
             <Link href={pathname.replace(/^\/(en|ru)/, "/" + targetLocale)}>
               {targetLocale}
