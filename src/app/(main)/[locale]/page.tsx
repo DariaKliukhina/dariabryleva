@@ -2,7 +2,7 @@ import { homepageQuery } from "~/sanity/cms-queries/homepage";
 import { getData } from "~/sanity/sanity-utils";
 
 export default async function Home({ params: { locale } }) {
-  const data = await getData(homepageQuery);
+  const data = await getData(homepageQuery, { lang: locale });
 
   console.log("locale", locale);
   if (!data) return <>no data</>;
@@ -12,8 +12,8 @@ export default async function Home({ params: { locale } }) {
 
   return (
     <>
-      <h2>{title[locale]}</h2>
-      <p>{description[locale]}</p>
+      <h2>{title}</h2>
+      <p>{description}</p>
     </>
   );
 }
