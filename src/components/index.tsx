@@ -3,3 +3,4 @@ export { PrimaryContainer } from "./Bits/PrimaryContainer";
 export { PageLayout } from "./PageLayout";
 export { RootStyleRegistry } from "./RootStyleRegistry";
 export { Header } from "./Blocks/Header";
+export { ExperienceList } from "./Sections/ExperienceList";
