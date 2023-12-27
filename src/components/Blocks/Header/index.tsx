@@ -1,8 +1,10 @@
-import { Group, Burger } from "@mantine/core";
+// "use client"
+import { Group, Burger, ThemeIcon } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import classes from "./Header.module.scss";
 import { PrimaryContainer } from "../../Bits/PrimaryContainer";
 import Link from "next/link";
+import { usePathname, useParams } from "next/navigation";
 
 const links = [
   { link: "/experience", label: "Experience" },
@@ -11,6 +13,10 @@ const links = [
 
 export const Header = () => {
   const [opened, { toggle }] = useDisclosure(false);
+  const pathname = usePathname();
+  const params = useParams();
+  const currentLocale = params.locale || "en";
+  const targetLocale = currentLocale === "ru" ? "en" : "ru";
 
   const items = links.map((link) => {
     return (
@@ -31,6 +37,9 @@ export const Header = () => {
         <div className={classes.inner}>
           <Link href={"/"}>home</Link>
           <Group gap={5} visibleFrom="sm">
+            <Link href={pathname.replace(/^\/(en|ru)/, "/" + targetLocale)}>
+              {targetLocale}
+            </Link>
             {items}
           </Group>
           <Burger opened={opened} onClick={toggle} size="sm" hiddenFrom="sm" />
