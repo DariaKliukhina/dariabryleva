@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "../globals.css";
+import "./globals.css";
 import { getData } from "~/sanity/sanity-utils";
 import { siteSettingsQuery } from "~/sanity/cms-queries";
 import { PageLayout } from "@/components";
@@ -58,6 +58,8 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+
+  
   return (
     <html lang="en">
       <body className={inter.className}>

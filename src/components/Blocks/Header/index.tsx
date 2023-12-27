@@ -1,4 +1,5 @@
-import { Group, Burger } from "@mantine/core";
+// "use client"
+import { Group, Burger, ThemeIcon } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import classes from "./Header.module.scss";
 import { PrimaryContainer } from "../../Bits/PrimaryContainer";
@@ -31,6 +32,7 @@ export const Header = () => {
         <div className={classes.inner}>
           <Link href={"/"}>home</Link>
           <Group gap={5} visibleFrom="sm">
+            {/* <ThemeIcon component="button">{language === "ru" ? "en" : "ru"}</ThemeIcon> */}
             {items}
           </Group>
           <Burger opened={opened} onClick={toggle} size="sm" hiddenFrom="sm" />
