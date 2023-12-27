@@ -1,4 +1,4 @@
-import { homepageQuery } from "~/sanity/cms-queries/homepage";
+import { homepageQuery } from "~/sanity/cms-queries";
 import { getData } from "~/sanity/sanity-utils";
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
