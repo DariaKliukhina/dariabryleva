@@ -20,7 +20,7 @@ export async function generateMetadata(): Promise<Metadata> {
       default: siteSettings?.title,
     },
     description: siteSettings?.description,
-    favicon: siteSettings?.favicon?.asset?.url,
+    // favicon: siteSettings?.favicon?.asset?.url,
     // openGraph: {
     //   title: data?.title,
     //   description: data?.description,
@@ -55,13 +55,13 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function RootLayout({
   children,
+  params: { locale },
 }: {
   children: React.ReactNode;
+  params: { locale: string };
 }) {
-
-  
   return (
-    <html lang="en">
+    <html lang={locale}>
       <body className={inter.className}>
         <PageLayout>{children}</PageLayout>
       </body>
