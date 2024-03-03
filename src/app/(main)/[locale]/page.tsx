@@ -2,6 +2,7 @@ import { LanguagesTypes } from "@/types";
 import { DEFAULT_LOCALE } from "@/utils";
 import { homepageQuery } from "~/sanity/cms-queries";
 import { getData } from "~/sanity/sanity-utils";
+import { getTranslations } from "next-intl/server";
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
@@ -14,6 +15,7 @@ export default async function Home({
 }: {
   params: PageParams;
 }) {
+  const t = await getTranslations({ locale, namespace: "Index" });
   const data = await getData(homepageQuery, { lang: locale || DEFAULT_LOCALE });
 
   if (!data?.mainInfo) return <>no data</>;
@@ -25,6 +27,7 @@ export default async function Home({
     <>
       <h2>{title}</h2>
       <p>{description}</p>
+      <button>{t("button")}</button>
     </>
   );
 }
