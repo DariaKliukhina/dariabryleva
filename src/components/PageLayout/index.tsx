@@ -4,20 +4,21 @@ import { Box } from "@mantine/core";
 import { RootStyleRegistry } from "../RootStyleRegistry";
 import { Header } from "../Blocks/Header";
 import { PrimaryContainer } from "../Bits/PrimaryContainer";
-import { useLocales } from "@/hooks";
+import { LanguagesTypes } from "@/types";
 
-export const PageLayout = ({ children }: { children: React.ReactNode }) => {
-  const { currentLocale, redirectToDefaultLocale } = useLocales();
-
-  if (!currentLocale) {
-    redirectToDefaultLocale();
-  }
-
+export const PageLayout = ({
+  children,
+  locale,
+}: {
+  children: React.ReactNode;
+  locale: LanguagesTypes;
+}) => {
   return (
     <>
       <RootStyleRegistry>
-        <Header />
+        <Header locale={locale} />
         <Box component="main">
+          {locale} teeeest
           <PrimaryContainer>
             <Box className="pageContent">{children}</Box>
           </PrimaryContainer>

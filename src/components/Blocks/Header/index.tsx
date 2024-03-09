@@ -2,25 +2,30 @@ import { Group, Burger } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import classes from "./Header.module.scss";
 import { PrimaryContainer } from "../../Bits/PrimaryContainer";
-import Link from "next/link";
+
 import { LangSwitcher } from "../../Bits/LangSwitcher";
-import { useLocales } from "@/hooks";
+import { Link } from "@/navigation";
+import { LanguagesTypes } from "@/types";
+
+type HeaderProps = {
+  locale: LanguagesTypes;
+};
 
 const links = [
   { link: "/experience", label: "Experience" },
   { link: "/reviews", label: "Reviews" },
 ];
 
-export const Header = () => {
+export const Header = ({ locale }: HeaderProps) => {
   const [opened, { toggle }] = useDisclosure(false);
-  const { currentLocale } = useLocales();
 
   const items = links.map((link) => {
     return (
       <Link
         key={link.label}
-        href={"/" + currentLocale + link.link}
+        href={link.link}
         className={classes.link}
+        locale={locale}
       >
         {link.label}
       </Link>
@@ -31,9 +36,9 @@ export const Header = () => {
     <header className={classes.header}>
       <PrimaryContainer>
         <div className={classes.inner}>
-          <Link href={"/" + currentLocale}>home</Link>
+          <Link href="/">home</Link>
           <Group gap={5} visibleFrom="sm">
-            <LangSwitcher />
+            <LangSwitcher locale={locale} />
             {items}
           </Group>
           <Burger opened={opened} onClick={toggle} size="sm" hiddenFrom="sm" />

@@ -1,6 +1,6 @@
 import { ExperienceList } from "@/components";
+import { DEFAULT_LOCALE } from "@/navigation";
 import { LanguagesTypes } from "@/types";
-import { DEFAULT_LOCALE } from "@/utils";
 import { experienceQuery } from "~/sanity/cms-queries";
 import { getData } from "~/sanity/sanity-utils";
 export const dynamic = "force-dynamic";

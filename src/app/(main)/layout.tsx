@@ -4,6 +4,7 @@ import "./globals.css";
 import { getData } from "~/sanity/sanity-utils";
 import { siteSettingsQuery } from "~/sanity/cms-queries";
 import { PageLayout } from "@/components";
+import { LanguagesTypes } from "@/types";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -53,17 +54,19 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
   params: { locale },
 }: {
   children: React.ReactNode;
-  params: { locale: string };
+  params: { locale: LanguagesTypes };
 }) {
+  
+  console.log('locale!!', locale)
   return (
     <html lang={locale}>
       <body className={inter.className}>
-        <PageLayout>{children}</PageLayout>
+        <PageLayout locale={locale}>{children}</PageLayout>
       </body>
     </html>
   );
