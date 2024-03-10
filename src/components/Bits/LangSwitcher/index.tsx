@@ -1,8 +1,17 @@
 import React from "react";
-import Link from "next/link";
-import { useLocales } from "@/hooks";
+import { Link, usePathname } from "@/navigation";
+import { LanguagesTypes } from "@/types";
 
-export const LangSwitcher = () => {
-  const { targetPath, targetLocale } = useLocales();
-  return <Link href={targetPath}>{targetLocale}</Link>;
+type LangSwitcherProps = {
+  locale: LanguagesTypes;
+};
+
+export const LangSwitcher = ({ locale }: LangSwitcherProps) => {
+  const targetLocal = locale === "en" ? "ru" : "en";
+  const path = usePathname();
+  return (
+    <Link href={path} locale={targetLocal}>
+      {targetLocal}
+    </Link>
+  );
 };

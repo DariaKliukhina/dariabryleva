@@ -1,8 +1,8 @@
 import { LanguagesTypes } from "@/types";
-import { DEFAULT_LOCALE } from "@/utils";
 import { homepageQuery } from "~/sanity/cms-queries";
 import { getData } from "~/sanity/sanity-utils";
 import { getTranslations } from "next-intl/server";
+import { DEFAULT_LOCALE } from "@/navigation";
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
