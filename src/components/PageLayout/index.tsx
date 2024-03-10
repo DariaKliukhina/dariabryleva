@@ -18,7 +18,6 @@ export const PageLayout = ({
       <RootStyleRegistry>
         <Header locale={locale} />
         <Box component="main">
-          {locale} teeeest
           <PrimaryContainer>
             <Box className="pageContent">{children}</Box>
           </PrimaryContainer>

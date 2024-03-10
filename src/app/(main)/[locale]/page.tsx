@@ -26,7 +26,6 @@ export default async function Home({
   return (
     <>
       <h2>{title}</h2>
-      {locale}
       <p>{description}</p>
       <button>{t("button")}</button>
     </>

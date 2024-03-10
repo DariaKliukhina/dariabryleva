@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
 import { getData } from "~/sanity/sanity-utils";
 import { siteSettingsQuery } from "~/sanity/cms-queries";
 import { PageLayout } from "@/components";
@@ -56,13 +56,11 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default function RootLayout({
   children,
-  params: { locale },
+  params: {locale},
 }: {
   children: React.ReactNode;
   params: { locale: LanguagesTypes };
 }) {
-  
-  console.log('locale!!', locale)
   return (
     <html lang={locale}>
       <body className={inter.className}>
