@@ -85,12 +85,9 @@ export const theme = createTheme({
   fontSizes,
   fontFamily: fontFamily,
 
-  // colors: {
-  //   // // Add your color
-  //   // deepBlue: ['#E9EDFC', '#C1CCF6', '#99ABF0' /* ... */],
-  //   // // or replace default theme color
-  //   // blue: ['#E9EDFC', '#C1CCF6', '#99ABF0' /* ... */],
-  // },
+  colors: {
+
+  },
 
   shadows: {
     md: "1px 1px 3px rgba(0, 0, 0, .25)",
