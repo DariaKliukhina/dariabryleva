@@ -20,6 +20,6 @@
 
   @mixin dark {
     display: block;
-    color: #ffffff;
+    color: var(--mantine-color-white);
   }
 }

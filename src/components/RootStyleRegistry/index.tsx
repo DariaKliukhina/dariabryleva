@@ -9,7 +9,6 @@ export function RootStyleRegistry({ children }: { children: any }) {
       <MantineProvider theme={theme} defaultColorScheme="auto">
         {children}
       </MantineProvider>
-      ;
     </>
   );
 }
