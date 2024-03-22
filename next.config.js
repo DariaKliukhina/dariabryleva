@@ -7,6 +7,14 @@ const nextConfig = {
   sassOptions: {
     prependData: `@import "./_mantine.scss";`,
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'cdn.sanity.io',
+      },
+    ],
+  }
 }
 
 module.exports = withNextIntl(nextConfig)
