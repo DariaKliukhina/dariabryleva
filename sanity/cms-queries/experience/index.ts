@@ -1,7 +1,7 @@
 import { groq } from "next-sanity";
 
 export const experienceQuery = groq`
-*[_type == "experience" && !(_id in path("drafts.**"))] {
+*[_type == "experience"] {
   title,
    jobsList[]-> {
      company->{
