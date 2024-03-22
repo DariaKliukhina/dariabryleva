@@ -87,14 +87,15 @@ body {
 
 body {
   color: rgb(var(--foreground-rgb));
+  transition: background-color 0.1s;
 
   @mixin light {
     color: var(--mantine-color-black);
-    background-color: var(--mantine-color-grape-1);
+    background-color: var(--mantine-color-light-0);
   }
 
   @mixin dark {
-    background-color: var(--mantine-color-violet-9);
+    background-color: var(--mantine-color-dark-10);
     color: var(--mantine-color-white);
   }
 }

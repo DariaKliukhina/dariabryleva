@@ -39,9 +39,9 @@ export const Header = ({ locale }: HeaderProps) => {
         <div className={classes.inner}>
           <Link href="/">home</Link>
           <Group gap={5} visibleFrom="sm">
+            {items}
             <LangSwitcher locale={locale} />
             <ColorSchemeSwitcher />
-            {items}
           </Group>
           <Burger opened={opened} onClick={toggle} size="sm" hiddenFrom="sm" />
         </div>

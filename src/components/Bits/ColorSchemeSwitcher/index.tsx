@@ -8,7 +8,9 @@ import cx from "clsx";
 import classes from "./ColorSchemeSwitcher.module.css";
 
 export const ColorSchemeSwitcher = () => {
-  const { setColorScheme } = useMantineColorScheme();
+  const { setColorScheme } = useMantineColorScheme({
+    keepTransitions: true,
+  });
   const computedColorScheme = useComputedColorScheme("light", {
     getInitialValueInEffect: true,
   });
