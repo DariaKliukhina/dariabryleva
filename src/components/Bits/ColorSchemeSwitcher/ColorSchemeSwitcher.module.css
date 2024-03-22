@@ -1,0 +1,25 @@
+.icon {
+  width: rem(16px);
+  height: rem(16px);
+}
+
+.dark {
+  @mixin dark {
+    display: none;
+  }
+
+  @mixin light {
+    display: block;
+  }
+}
+
+.light {
+  @mixin light {
+    display: none;
+  }
+
+  @mixin dark {
+    display: block;
+    color: var(--mantine-color-white);
+  }
+}

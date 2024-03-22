@@ -3,6 +3,7 @@ import { homepageQuery } from "~/sanity/cms-queries";
 import { getData } from "~/sanity/sanity-utils";
 import { getTranslations } from "next-intl/server";
 import { DEFAULT_LOCALE } from "@/navigation";
+import { Button } from "@mantine/core";
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
@@ -27,7 +28,7 @@ export default async function Home({
     <>
       <h2>{title}</h2>
       <p>{description}</p>
-      <button>{t("button")}</button>
+      <Button variant="outline">{t("button")}</Button>
     </>
   );
 }

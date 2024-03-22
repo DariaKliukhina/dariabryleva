@@ -1,9 +1,4 @@
-import {
-  createTheme,
-  rem,
-  MantineSize,
-  DEFAULT_THEME,
-} from "@mantine/core";
+import { createTheme, rem, MantineSize, DEFAULT_THEME } from "@mantine/core";
 
 export type FontSize = MantineSize | "xxl" | "xxs";
 export type FontSizes = Record<FontSize, string>;
@@ -81,16 +76,38 @@ const zIndex = {
 export const theme = createTheme({
   ...DEFAULT_THEME,
   spacing,
-  primaryColor: "violet",
+  primaryColor: "dark",
   fontSizes,
   fontFamily: fontFamily,
 
-  // colors: {
-  //   // // Add your color
-  //   // deepBlue: ['#E9EDFC', '#C1CCF6', '#99ABF0' /* ... */],
-  //   // // or replace default theme color
-  //   // blue: ['#E9EDFC', '#C1CCF6', '#99ABF0' /* ... */],
-  // },
+  colors: {
+    dark: [
+      "#edefff",
+      "#dfe1ff",
+      "#c5c8ff",
+      "#a2a3ff",
+      "#857dfc",
+      "#735ef6",
+      "#6540eb",
+      "#5833cf",
+      "#462ca7",
+      "#3c2b84",
+      "#2a1d58",
+    ],
+    light: [
+      "#fff3f9",
+      "#ffe3f3",
+      "#ffc7e6",
+      "#ff99d0",
+      "#ff5aaf",
+      "#ff2a8f",
+      "#fc0668",
+      "#dc004e",
+      "#b50040",
+      "#960538",
+      "#5d001d",
+    ],
+  },
 
   shadows: {
     md: "1px 1px 3px rgba(0, 0, 0, .25)",

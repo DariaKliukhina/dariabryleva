@@ -6,6 +6,7 @@ import { PrimaryContainer } from "../../Bits/PrimaryContainer";
 import { LangSwitcher } from "../../Bits/LangSwitcher";
 import { Link } from "@/navigation";
 import { LanguagesTypes } from "@/types";
+import { ColorSchemeSwitcher } from "../../Bits/ColorSchemeSwitcher";
 
 type HeaderProps = {
   locale: LanguagesTypes;
@@ -38,8 +39,9 @@ export const Header = ({ locale }: HeaderProps) => {
         <div className={classes.inner}>
           <Link href="/">home</Link>
           <Group gap={5} visibleFrom="sm">
-            <LangSwitcher locale={locale} />
             {items}
+            <LangSwitcher locale={locale} />
+            <ColorSchemeSwitcher />
           </Group>
           <Burger opened={opened} onClick={toggle} size="sm" hiddenFrom="sm" />
         </div>
