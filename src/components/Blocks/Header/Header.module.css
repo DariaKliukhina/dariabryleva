@@ -20,7 +20,7 @@
   font-weight: 500;
 
   @mixin hover {
-    // background-color: pink;
+    /* background-color: pink; */
   }
 
   &:hover {

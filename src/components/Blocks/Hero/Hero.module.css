@@ -1,0 +1,19 @@
+.container {
+  max-width: rem(1000);
+  width: 100%;
+}
+
+.imageWrapper {
+  width: rem(300);
+  height: rem(300);
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  margin-right: var(--mantine-spacing-xxxl);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

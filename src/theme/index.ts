@@ -115,7 +115,7 @@ export const theme = createTheme({
   },
   other: {
     zIndex,
-    containerSize: rem(1800),
+    containerSize: rem(1600),
     // namedColors: {
     //   light: {
     //     app: {

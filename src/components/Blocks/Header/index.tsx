@@ -1,6 +1,6 @@
 import { Group, Burger } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import classes from "./Header.module.scss";
+import classes from "./Header.module.css";
 import { PrimaryContainer } from "../../Bits/PrimaryContainer";
 
 import { LangSwitcher } from "../../Bits/LangSwitcher";
@@ -37,7 +37,7 @@ export const Header = ({ locale }: HeaderProps) => {
     <header className={classes.header}>
       <PrimaryContainer>
         <div className={classes.inner}>
-          <Link href="/">home</Link>
+          <Link href="/">Home</Link>
           <Group gap={5} visibleFrom="sm">
             {items}
             <LangSwitcher locale={locale} />
