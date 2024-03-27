@@ -115,52 +115,9 @@ export const theme = createTheme({
   },
   other: {
     zIndex,
-    containerSize: rem(1800),
-    // namedColors: {
-    //   light: {
-    //     app: {
-    //       background: monoColors[100],
-    //       highlight: monoColors[90],
-    //     },
-    //     element: {
-    //       background: monoColors[40],
-    //       backgroundInverse: monoColors[10],
-    //       backgroundMenu: monoColors[70],
-    //       border: monoColors[50],
-    //     },
-    //     typography: {
-    //       body: monoColors[10],
-    //       footer: monoColors[80],
-    //       disabled: monoColors[70],
-    //       inactive: monoColors[80],
-    //       active: monoColors[10],
-    //       label: monoColors[70],
-    //     },
-    //   },
-    //   dark: {
-    //       app: {
-    //         background: monoColors[100],
-    //         highlight: monoColors[90],
-    //       },
-    //       element: {
-    //         background: monoColors[40],
-    //         backgroundInverse: monoColors[10],
-    //         backgroundMenu: monoColors[70],
-    //         border: monoColors[50],
-    //       },
-    //       typography: {
-    //         body: monoColors[10],
-    //         footer: monoColors[80],
-    //         disabled: monoColors[70],
-    //         inactive: monoColors[80],
-    //         active: monoColors[10],
-    //         label: monoColors[70],
-    //       },
-    //     }
-    // },
+    containerSize: rem(1600),
   },
   headings: {
-    // fontFamily: 'Roboto, sans-serif',
     sizes: {
       h1: { fontSize: rem(2.5) },
       h2: { fontSize: rem(2) },
