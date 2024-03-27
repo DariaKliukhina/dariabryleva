@@ -38,7 +38,7 @@ export const Header = ({ locale }: HeaderProps) => {
       <PrimaryContainer>
         <div className={classes.inner}>
           <Link href="/">Home</Link>
-          <Group gap={5} visibleFrom="sm">
+          <Group gap={16} visibleFrom="sm">
             {items}
             <LangSwitcher locale={locale} />
             <ColorSchemeSwitcher />
