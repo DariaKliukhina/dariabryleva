@@ -1,4 +1,4 @@
-import { Box, Button, Center, Flex } from "@mantine/core";
+import { Box, Button, Center, Flex, rem } from "@mantine/core";
 import { useTranslations } from "next-intl";
 import Image, { ImageProps } from "next/image";
 import { sanityImageUrl } from "~/sanity/lib/client";
@@ -15,7 +15,11 @@ export const Hero = ({ title, description, mainImage }: HeroProps) => {
 
   return (
     <Center>
-      <Flex className={classes.container}>
+      <Flex
+        className={classes.container}
+        direction={{ base: "column", lg: "row" }}
+        maw={{ base: rem(600), lg: rem(800), xl: rem(1000) }}
+      >
         {mainImage && (
           <Box className={classes.imageWrapper}>
             <Image
