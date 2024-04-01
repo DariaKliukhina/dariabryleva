@@ -1,5 +1,14 @@
 {
+  "Menu": {
+    "home": "На главную",
+    "experience": "Опыт",
+    "reviews": "Отзывы"
+  },
   "Index": {
     "button": "тест"
+  },
+  "Experience": {
+    "teaching": "обучение",
+    "development": "разработка"
   }
 }

@@ -16,7 +16,6 @@ export default async function Experience({
   params: PageParams;
 }) {
   const data = await getData(experienceQuery, { lang: locale || DEFAULT_LOCALE });
-  console.log(data.jobsList);
 
   return (
     <>

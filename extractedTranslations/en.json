@@ -1,5 +1,14 @@
 {
+  "Menu": {
+    "home": "home",
+    "experience": "experience",
+    "reviews": "reviews"
+  },
   "Index": {
     "button": "test"
+  },
+  "Experience": {
+    "teaching": "teaching",
+    "development": "development"
   }
 }

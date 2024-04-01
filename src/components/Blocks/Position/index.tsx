@@ -1,34 +1,16 @@
-import { Box, Flex } from "@mantine/core";
+import { Box, Flex, Text, rem } from "@mantine/core";
 import Link from "next/link";
 import classes from "./Position.module.css";
+import { Position } from "@/types";
 
-type TechnologiesProps = {
-  slug: string;
-  title: string;
-};
-
-type CompanyProps = {
-  companyName: string;
-  link: string;
-};
-
-type PositionProps = {
-  company: CompanyProps;
-  description: string;
-  position: string;
-  locationType: string;
-  workType: string;
-  technologies: TechnologiesProps[];
-};
-
-export const Position = ({
+export const PositionItem = ({
   company,
   description,
   locationType,
   workType,
   position,
   technologies,
-}: PositionProps) => {
+}: Position) => {
   return (
     <Box>
       <Flex justify="space-between" className={classes.header}>
@@ -43,11 +25,11 @@ export const Position = ({
 
       <Box className={classes.description}>{description}</Box>
 
-      <Box className={classes.technologies}>
+      <Flex wrap="wrap" className={classes.technologies} gap={rem(10)}>
         {technologies.map((item) => (
-          <Box key={item.slug}>{item.title}</Box>
+          <Text key={item.slug}>{item.title}</Text>
         ))}
-      </Box>
+      </Flex>
     </Box>
   );
 };
