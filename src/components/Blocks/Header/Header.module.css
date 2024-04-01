@@ -1,9 +1,8 @@
 .header {
-  height: rem(56px);
+  padding: rem(16px) 0;
 }
 
 .inner {
-  height: rem(56px);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -27,4 +26,15 @@
 
 .linkLabel {
   margin-right: rem(5px);
+}
+
+.iconHome {
+  width: rem(36px);
+  height: rem(36px);
+}
+
+.home {
+  display: flex;
+  align-items: center;
+  gap: rem(10px);
 }

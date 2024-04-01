@@ -24,8 +24,8 @@ export const ColorSchemeSwitcher = () => {
       size="md"
       aria-label="Toggle color scheme"
     >
-      <IconSun className={cx(classes.icon, classes.light)} stroke={1.5} />
-      <IconMoon className={cx(classes.icon, classes.dark)} stroke={1.5} />
+      <IconSun className={cx(classes.icon, classes.light)} stroke={1.5} aria-label="light" />
+      <IconMoon className={cx(classes.icon, classes.dark)} stroke={1.5} aria-label="dark" />
     </ActionIcon>
   );
 };
