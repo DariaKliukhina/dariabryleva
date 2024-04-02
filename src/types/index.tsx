@@ -8,6 +8,7 @@ export type Technologies = {
 export type Company = {
   companyName: string;
   link: string;
+  companyLogo: object;
 };
 
 export type Position = {
