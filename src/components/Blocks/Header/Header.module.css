@@ -1,9 +1,8 @@
 .header {
-  height: rem(56px);
+  padding: rem(16px) 0;
 }
 
 .inner {
-  height: rem(56px);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -12,10 +11,8 @@
 .link {
   display: block;
   line-height: 1;
-  border-radius: var(--mantine-radius-sm);
   text-decoration: none;
-  color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-0));
-  font-weight: 500;
+  color: inherit;
 
   @mixin hover {
   }
@@ -27,4 +24,15 @@
 
 .linkLabel {
   margin-right: rem(5px);
+}
+
+.iconHome {
+  width: rem(36px);
+  height: rem(36px);
+}
+
+.home {
+  display: flex;
+  align-items: center;
+  gap: rem(10px);
 }

@@ -1,0 +1,13 @@
+.position {
+  margin-bottom: rem(20px);
+
+  &:last-child {
+    margin-bottom: none;
+  }
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 100%;
+  max-width: rem(1000px);
+}

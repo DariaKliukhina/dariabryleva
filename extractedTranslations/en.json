@@ -1,5 +1,15 @@
 {
+  "Menu": {
+    "home": "Home",
+    "experience": "Experience",
+    "reviews": "Reviews"
+  },
   "Index": {
     "button": "test"
+  },
+  "Experience": {
+    "title": "Experience",
+    "teaching": "teaching",
+    "development": "development"
   }
 }
