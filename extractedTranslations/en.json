@@ -1,8 +1,8 @@
 {
   "Menu": {
-    "home": "home",
-    "experience": "experience",
-    "reviews": "reviews"
+    "home": "Home",
+    "experience": "Experience",
+    "reviews": "Reviews"
   },
   "Index": {
     "button": "test"
