@@ -1,91 +1,98 @@
-import { TagIcon } from '@sanity/icons';
-import { defineField, defineType } from 'sanity';
+import { TagIcon } from "@sanity/icons";
+import { defineField, defineType } from "sanity";
 
 export default defineType({
-  name: 'position',
-  title: 'Position',
-  type: 'document',
+  name: "position",
+  title: "Position",
+  type: "document",
   icon: TagIcon,
   fields: [
     defineField({
-      title: 'Company',
-      name: 'company',
-      type: 'reference',
+      title: "Company",
+      name: "company",
+      type: "reference",
       to: {
-        type: 'company',
+        type: "company",
       },
     }),
     // TODO: add dates
     defineField({
-      title: 'Position title',
-      name: 'position',
-      type: 'i18n.string'
+      title: "Position title",
+      name: "position",
+      type: "i18n.string",
     }),
     defineField({
-      title: 'Work type',
-      name: 'workType',
-      type: 'string',
+      title: "Work type",
+      name: "workType",
+      type: "string",
       options: {
         list: [
-          {title: 'Development', value: 'development'},
-          {title: 'Teaching', value: 'teaching'},
+          { title: "Development", value: "development" },
+          { title: "Teaching", value: "teaching" },
         ],
-        layout: 'radio',
+        layout: "radio",
       },
-      initialValue: 'development',
+      initialValue: "development",
     }),
     defineField({
-      title: 'Employment type',
-      name: 'employmentType',
-      type: 'string',
+      title: "Employment type",
+      name: "employmentType",
+      type: "string",
       options: {
         list: [
-          {title: 'Permanent Full-time', value: 'fulltime'},
-          {title: 'Part-time', value: 'part-time'},
+          { title: "Permanent Full-time", value: "fulltime" },
+          { title: "Part-time", value: "part-time" },
         ],
-        layout: 'radio',
+        layout: "radio",
       },
-      initialValue: 'fulltime',
+      initialValue: "fulltime",
     }),
     defineField({
-      title: 'Location type',
-      name: 'locationType',
-      type: 'string',
+      title: "Location type",
+      name: "locationType",
+      type: "string",
       options: {
         list: [
-          {title: 'On-site', value: 'on-site'},
-          {title: 'Hybrid', value: 'hybrid'},
-          {title: 'Remote', value: 'remote'},
+          { title: "On-site", value: "on-site" },
+          { title: "Hybrid", value: "hybrid" },
+          { title: "Remote", value: "remote" },
         ],
-        layout: 'dropdown',
+        layout: "dropdown",
       },
-      initialValue: 'on-site',
+      initialValue: "on-site",
     }),
     defineField({
-      title: 'Description',
-      name: 'description',
-      type: 'i18n.text'
+      title: "Description",
+      name: "description",
+      type: "i18n.text",
     }),
     defineField({
-      title: 'Technologies',
-      name: 'technologies',
-      type: 'array',
+      title: "Technologies",
+      name: "technologies",
+      type: "array",
       of: [
         {
-          title: 'Technology Item',
-          name: 'technologyItem',
-          type: 'reference',
+          title: "Technology Item",
+          name: "technologyItem",
+          type: "reference",
           to: {
-            type: 'technology'
-          }
-        }
-      ]
-    })
+            type: "technology",
+          },
+        },
+      ],
+    }),
   ],
   preview: {
     select: {
-      title: 'company.companyName',
+      media: "company.companyLogo",
+      title: "company.companyName",
+      position: "position",
+    },
+    prepare: ({ title, media, position }) => {
+      return {
+        media,
+        title: `${title}: ${position?.en || ""}`,
+      };
     },
   },
-
 });

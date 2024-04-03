@@ -119,12 +119,12 @@ export const theme = createTheme({
   },
   headings: {
     sizes: {
-      h1: { fontSize: rem(2.5) },
-      h2: { fontSize: rem(2) },
-      h3: { fontSize: rem(1.5) },
-      h4: { fontSize: rem(1.25) },
-      h5: { fontSize: rem(1) },
-      h6: { fontSize: rem(0.85) },
+      h1: { fontSize: rem(2.5), fontWeight: "normal" },
+      h2: { fontSize: rem(2), fontWeight: "normal" },
+      h3: { fontSize: rem(1.5), fontWeight: "normal" },
+      h4: { fontSize: rem(1.25), fontWeight: "normal" },
+      h5: { fontSize: rem(1), fontWeight: "normal" },
+      h6: { fontSize: rem(0.85), fontWeight: "normal" },
     },
   },
 });

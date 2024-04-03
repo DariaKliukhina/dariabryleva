@@ -1,34 +1,34 @@
-import {defineType, defineField} from 'sanity'
+import { defineType, defineField } from "sanity";
 
 export default defineType({
-  name: 'siteSettings',
-  title: 'Site Settings',
-  type: 'document',
+  name: "siteSettings",
+  title: "Site Settings",
+  type: "document",
   preview: {
     prepare: () => ({
-      title: 'Site settings',
+      title: "Site settings",
     }),
   },
   fields: [
     defineField({
-      name: 'title',
-      title: 'Title',
-      type: 'string',
+      name: "title",
+      title: "Title",
+      type: "string",
     }),
     defineField({
-      name: 'description',
-      title: 'Description',
-      type: 'i18n.text',
+      name: "description",
+      title: "Description",
+      type: "i18n.text",
     }),
     defineField({
-      name: 'logo',
-      title: 'Site Logo',
-      type: 'image',
+      name: "logo",
+      title: "Site Logo",
+      type: "image",
     }),
     defineField({
-      name: 'favicon',
-      title: 'Site Favicon',
-      type: 'image',
+      name: "favicon",
+      title: "Site Favicon",
+      type: "image",
     }),
   ],
-})
+});
