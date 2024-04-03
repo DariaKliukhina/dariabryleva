@@ -1,44 +1,44 @@
-import {defineField, defineType} from 'sanity'
+import { defineField, defineType } from "sanity";
 
 export default defineType({
-  name: 'experience',
-  title: 'Experience',
-  type: 'document',
+  name: "experience",
+  title: "Experience",
+  type: "document",
   fields: [
     defineField({
-      name: 'title',
-      title: 'Title',
-      type: 'string',
+      name: "title",
+      title: "Title",
+      type: "string",
     }),
     defineField({
-      name: 'slug',
-      title: 'Slug',
-      type: 'slug',
+      name: "slug",
+      title: "Slug",
+      type: "slug",
       options: {
-        source: 'title',
+        source: "title",
         maxLength: 96,
       },
     }),
     defineField({
-      name: 'jobsList',
-      title: 'Jobs List',
-      type: 'array',
+      name: "jobsList",
+      title: "Jobs List",
+      type: "array",
       of: [
         {
-          name: 'positionItem',
-          title: 'Position',
-          type: 'reference',
+          name: "positionItem",
+          title: "Position",
+          type: "reference",
           to: {
-            type: 'position'
-          }
-        }
-      ]
-    })
+            type: "position",
+          },
+        },
+      ],
+    }),
   ],
 
   preview: {
     select: {
-      title: 'title',
+      title: "title",
     },
   },
-})
+});

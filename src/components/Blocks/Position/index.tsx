@@ -42,9 +42,11 @@ export const PositionItem = ({
 
       <Box className={classes.description}>{description}</Box>
 
-      <Flex wrap="wrap" className={classes.technologies} gap={rem(10)}>
-        {technologies.map((item) => (
-          <Text key={item.slug}>{item.title}</Text>
+      <Flex wrap="wrap" className={classes.technologies} gap={rem(18)}>
+        {technologies?.map((item) => (
+          <Text key={item.slug} className={classes.technoligy}>
+            {item.title}
+          </Text>
         ))}
       </Flex>
     </Box>
