@@ -20,4 +20,4 @@ export const experienceQuery = groq`
        "slug": slug.current
      }
    }
-}[0]`
+}[0]`;

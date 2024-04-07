@@ -1,4 +1,8 @@
-export type LanguagesTypes = 'en' | 'ru'
+export type LanguagesTypes = "en" | "ru";
+
+export type workTypes = {
+  [key: string]: string;
+};
 
 export type Technologies = {
   slug: string;
@@ -11,7 +15,7 @@ export type Company = {
   companyLogo: object;
 };
 
-export type Position = {
+export type PositionRaw = {
   company: Company;
   description: string;
   position: string;
@@ -19,3 +23,16 @@ export type Position = {
   workType: string;
   technologies: Technologies[];
 };
+
+type Experience = {
+  description: string;
+  positionTitle: string;
+  locationType: string;
+  workType: string;
+  technologies: Technologies[];
+};
+
+export interface Position {
+  company: Company;
+  experience: Experience[];
+}
