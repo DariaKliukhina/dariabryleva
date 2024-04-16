@@ -3,7 +3,7 @@
 }
 
 .headerInfo {
-  padding-left: rem(16px);
+  /* padding-left: rem(16px); */
 }
 
 .description {
@@ -15,20 +15,18 @@
 }
 
 .root {
-  padding: rem(20px);
-  border-radius: rem(20px);
-  border: 1px solid var(--mantine-color-dark-10);
-  border-color: light-dark(
-    var(--mantine-color-dark-10),
-    var(--mantine-color-light-0)
-  );
+  padding-left: rem(80px);
+  position: relative;
 }
 
 .imageWrapper {
-  width: rem(80px);
-  height: rem(80px);
+  width: rem(60px);
+  height: rem(60px);
   line-height: 0;
   overflow: hidden;
+  position: absolute;
+  top: rem(4);
+  left: 0;
 
   img {
     width: 100%;
@@ -46,5 +44,12 @@
 
 .technoligy {
   font-size: rem(14px);
-  
+}
+
+.positionItem {
+  margin-top: rem(20px);
+}
+
+.title {
+  font-weight: 500;
 }

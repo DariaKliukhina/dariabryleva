@@ -1,4 +1,4 @@
-import { Box, Flex, Text, rem } from "@mantine/core";
+import { Box, Flex, Text, Title, rem } from "@mantine/core";
 import Link from "next/link";
 import classes from "./Position.module.css";
 import { Position, workTypes } from "@/types";
@@ -18,20 +18,24 @@ export const PositionItem = ({
 
   return (
     <Box className={classes.root}>
-      <Flex>
-        <Box className={classes.imageWrapper}>
-          <Image
-            src={sanityImageUrl(companyLogo).url()}
-            width={150}
-            height={150}
-            alt={companyName || ""}
-            priority
-          />
-        </Box>
-        <Box className={classes.headerInfo}>
-          <Link href={link}>{companyName}</Link>
-        </Box>
-      </Flex>
+      <Box className={classes.imageWrapper}>
+        <Image
+          src={sanityImageUrl(companyLogo).url()}
+          width={150}
+          height={150}
+          alt={companyName || ""}
+          priority
+        />
+      </Box>
+      <Box className={classes.headerInfo}>
+        <Link href={link}>
+          {" "}
+          <Title order={3} size={rem(30)} className={classes.title}>
+            {companyName}
+          </Title>
+        </Link>
+        <Text>Dates</Text>
+      </Box>
 
       <Box>
         {experience?.map((experienceItem) => {
@@ -44,10 +48,15 @@ export const PositionItem = ({
           } = experienceItem;
 
           return (
-            <Box key={companyName + positionTitle}>
+            <Box
+              key={companyName + positionTitle}
+              className={classes.positionItem}
+            >
               <Flex justify="space-between" className={classes.header}>
                 <Box className={classes.workInfo}>
-                  <Box>{positionTitle}</Box>
+                  <Title order={4} size={rem(24)} className={classes.title}>
+                    {positionTitle}
+                  </Title>
                   <Text>{locationType}</Text>
                 </Box>
                 <Box>{workTypes[workType]}</Box>
