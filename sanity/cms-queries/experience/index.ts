@@ -13,6 +13,9 @@ export const experienceQuery = groq`
      },
      "description": descriptionWithTranslation[$lang],
      locationType,
+     currentWork,
+     startDate,
+     endDate,
      workType,
      "position": position[$lang],
      technologies[]-> {
