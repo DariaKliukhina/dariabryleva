@@ -4,6 +4,7 @@ import classes from "./Position.module.css";
 import { Position, workTypes } from "@/types";
 import Image from "next/image";
 import { sanityImageUrl } from "~/sanity/lib/client";
+import { PortableText } from "@portabletext/react";
 
 interface PositionItemProps extends Position {
   workTypes: workTypes;
@@ -61,7 +62,11 @@ export const PositionItem = ({
                 </Box>
                 <Box>{workTypes[workType]}</Box>
               </Flex>
-              <Box className={classes.description}>{description}</Box>
+              <Box className={classes.description}>
+                {description?.map((item, index) => (
+                  <PortableText key={item[0]?._key || index} value={item} />
+                ))}
+              </Box>
 
               <Flex wrap="wrap" className={classes.technologies} gap={rem(18)}>
                 {technologies?.map((item) => (
