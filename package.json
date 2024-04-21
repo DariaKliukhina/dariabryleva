@@ -12,6 +12,7 @@
     "@mantine/core": "^7.2.2",
     "@mantine/form": "^7.2.2",
     "@mantine/hooks": "^7.2.2",
+    "@portabletext/react": "^3.0.18",
     "@sanity/icons": "^2.7.0",
     "@sanity/image-url": "^1.0.2",
     "@sanity/vision": "^3.19.3",

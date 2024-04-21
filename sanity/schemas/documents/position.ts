@@ -63,8 +63,20 @@ export default defineType({
     }),
     defineField({
       title: "Description",
-      name: "description",
-      type: "i18n.text",
+      name: "descriptionWithTranslation",
+      type: "object",
+      fields: [
+        defineField({
+          title: "en",
+          name: "en",
+          type: "blockContent",
+        }),
+        defineField({
+          title: "ru",
+          name: "ru",
+          type: "blockContent",
+        }),
+      ],
     }),
     defineField({
       title: "Technologies",
