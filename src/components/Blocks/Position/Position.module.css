@@ -8,6 +8,23 @@
 
 .description {
   margin-bottom: rem(10px);
+
+  ul {
+    list-style: none;
+  }
+
+  li {
+    padding-left: rem(16px);
+    position: relative;
+
+    &::before {
+      content: "-";
+      display: inline-block;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
 }
 
 .technologies {
