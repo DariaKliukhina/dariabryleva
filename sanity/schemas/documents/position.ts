@@ -1,3 +1,4 @@
+import { generateMonthOptions, generateYearsOptions } from "@/utils";
 import { TagIcon } from "@sanity/icons";
 import { defineField, defineType } from "sanity";
 
@@ -15,11 +16,67 @@ export default defineType({
         type: "company",
       },
     }),
-    // TODO: add dates
     defineField({
       title: "Position title",
       name: "position",
       type: "i18n.string",
+    }),
+    defineField({
+      title: "I am currently working in this role",
+      name: "currentWork",
+      type: "boolean",
+      initialValue: true,
+    }),
+    defineField({
+      title: "Start date",
+      name: "startDate",
+      type: "object",
+      fields: [
+        defineField({
+          title: "Month",
+          name: "month",
+          type: "number",
+          options: {
+            list: generateMonthOptions(),
+          },
+          initialValue: 1,
+        }),
+        defineField({
+          title: "Year",
+          name: "year",
+          type: "number",
+          options: {
+            list: generateYearsOptions(),
+          },
+          initialValue: new Date().getFullYear(),
+        }),
+      ],
+    }),
+    defineField({
+      title: "End date",
+      name: "endDate",
+      type: "object",
+      hidden: ({ document }) => !!document?.currentWork,
+      fields: [
+        defineField({
+          title: "Month",
+          name: "month",
+          type: "number",
+          options: {
+            list: generateMonthOptions(),
+          },
+          initialValue: 1,
+        }),
+        defineField({
+          title: "Year",
+          name: "year",
+          type: "number",
+          options: {
+            list: generateYearsOptions(),
+          },
+          initialValue: new Date().getFullYear(),
+        }),
+      ],
     }),
     defineField({
       title: "Work type",

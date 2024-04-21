@@ -9,10 +9,17 @@ export type Technologies = {
   title: string;
 };
 
+type PositionDate = {
+  month: number;
+  year: number;
+};
+
 export type Company = {
   companyName: string;
   link: string;
   companyLogo: object;
+  totalMonth: number;
+  currentWork: boolean;
 };
 
 export type PositionRaw = {
@@ -22,6 +29,9 @@ export type PositionRaw = {
   locationType: string;
   workType: string;
   technologies: Technologies[];
+  startDate: PositionDate;
+  endDate?: PositionDate;
+  currentWork: boolean;
 };
 
 type Experience = {
@@ -30,6 +40,10 @@ type Experience = {
   locationType: string;
   workType: string;
   technologies: Technologies[];
+  currentWork: boolean;
+  totalMonth: number;
+  startDate: PositionDate;
+  endDate?: PositionDate;
 };
 
 export interface Position {

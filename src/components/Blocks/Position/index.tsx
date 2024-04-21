@@ -5,6 +5,7 @@ import { Position, workTypes } from "@/types";
 import Image from "next/image";
 import { sanityImageUrl } from "~/sanity/lib/client";
 import { PortableText } from "@portabletext/react";
+import { MONTH, adaptTotlaDate } from "@/utils";
 
 interface PositionItemProps extends Position {
   workTypes: workTypes;
@@ -15,7 +16,14 @@ export const PositionItem = ({
   experience,
   workTypes,
 }: PositionItemProps) => {
-  const { companyLogo, companyName, link } = company;
+  const {
+    companyLogo,
+    companyName,
+    link,
+    totalMonth: companyTotalMonth,
+  } = company;
+
+  const adaptedTotalDate = adaptTotlaDate(companyTotalMonth);
 
   return (
     <Box className={classes.root}>
@@ -35,7 +43,14 @@ export const PositionItem = ({
             {companyName}
           </Title>
         </Link>
-        <Text>Dates</Text>
+        <Flex gap={6}>
+          {adaptedTotalDate.adaptedYears && (
+            <Text>{adaptedTotalDate.adaptedYears}</Text>
+          )}
+          {adaptedTotalDate.adaptedMonth && (
+            <Text>{adaptedTotalDate.adaptedMonth}</Text>
+          )}
+        </Flex>
       </Box>
 
       <Box>
@@ -46,7 +61,12 @@ export const PositionItem = ({
             workType,
             positionTitle,
             technologies,
+            totalMonth,
+            startDate,
+            endDate,
           } = experienceItem;
+
+          const adaptedPositionlDate = adaptTotlaDate(totalMonth);
 
           return (
             <Box
@@ -58,6 +78,20 @@ export const PositionItem = ({
                   <Title order={4} size={rem(24)} className={classes.title}>
                     {positionTitle}
                   </Title>
+                  <Flex gap={6}>
+                    {adaptedPositionlDate.adaptedYears && (
+                      <Text>{adaptedPositionlDate.adaptedYears}</Text>
+                    )}
+                    {adaptedPositionlDate.adaptedMonth && (
+                      <Text>{adaptedPositionlDate.adaptedMonth}</Text>
+                    )}
+                  </Flex>
+                  <Text>
+                    {MONTH[startDate.month - 1]} {startDate.year} -{" "}
+                    {endDate
+                      ? ` ${`${MONTH[endDate.month - 1]} ${endDate.year}`}`
+                      : "Present"}
+                  </Text>
                   <Text>{locationType}</Text>
                 </Box>
                 <Box>{workTypes[workType]}</Box>

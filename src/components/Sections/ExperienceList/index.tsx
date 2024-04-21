@@ -16,8 +16,6 @@ export const ExperienceList = ({ list }: ExperienceListProps) => {
     teaching: t("teaching"),
   };
 
-  console.log(list);
-
   const experience = adaptExperience(list);
   return (
     <Box>

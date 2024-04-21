@@ -25,9 +25,9 @@ export const structure: StructureResolver = (S) =>
         ),
 
       S.divider(),
-      S.documentTypeListItem("technology").title("Technologies").icon(CodeIcon),
-      S.documentTypeListItem("company").title("Company").icon(HomeIcon),
       S.documentTypeListItem("position").title("Position").icon(CaseIcon),
+      S.documentTypeListItem("company").title("Company").icon(HomeIcon),
+      S.documentTypeListItem("technology").title("Technologies").icon(CodeIcon),
 
       S.divider(),
 
