@@ -11,7 +11,7 @@ export const experienceQuery = groq`
       link,
       companyLogo
      },
-     "description": description[$lang],
+     "description": descriptionWithTranslation[$lang],
      locationType,
      workType,
      "position": position[$lang],

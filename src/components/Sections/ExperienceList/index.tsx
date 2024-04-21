@@ -14,7 +14,9 @@ export const ExperienceList = ({ list }: ExperienceListProps) => {
   const workTypes = {
     development: t("development"),
     teaching: t("teaching"),
-  }
+  };
+
+  console.log(list);
 
   const experience = adaptExperience(list);
   return (
@@ -28,10 +30,7 @@ export const ExperienceList = ({ list }: ExperienceListProps) => {
       <Box className={classes.wrapper}>
         {experience?.map((item) => (
           <Box key={item.company.companyName} className={classes.position}>
-            <PositionItem
-              {...item}
-              workTypes={workTypes}
-            />
+            <PositionItem {...item} workTypes={workTypes} />
           </Box>
         ))}
       </Box>
