@@ -1,15 +1,17 @@
 import { Box, Flex, Text, Title, rem } from "@mantine/core";
-import classes from "./Position.module.css";
-import { Experience, employmentTypes, workTypes } from "@/types";
+import { Position, LanguagesTypes, employmentTypes, workTypes } from "@/types";
 import { PortableText } from "@portabletext/react";
-import { MONTH } from "@/utils";
 import { AdaptedDate } from "../../Bits/AdaptedDate";
+import { MONTH } from "@/utils";
+import classes from "./Position.module.css";
+import { TypedObject } from "sanity";
 
 interface PositionItemProps {
   workTypes: workTypes;
   employmentTypes: employmentTypes;
-  experience: Experience;
+  experience: Position;
   showTotal?: boolean;
+  locale: LanguagesTypes;
 }
 
 export const PositionItem = ({
@@ -17,6 +19,7 @@ export const PositionItem = ({
   workTypes,
   employmentTypes,
   showTotal = true,
+  locale,
 }: PositionItemProps) => {
   const {
     description,
@@ -48,7 +51,7 @@ export const PositionItem = ({
             {showTotal ? (
               <>
                 <Text>, </Text>&nbsp;
-                <AdaptedDate date={totalMonth} />
+                <AdaptedDate date={totalMonth} locale={locale} />
               </>
             ) : (
               ""
@@ -64,8 +67,8 @@ export const PositionItem = ({
         </Flex>
       </Flex>
       <Box className={classes.description}>
-        {description?.map((item, index) => (
-          <PortableText key={item[0]?._key || index} value={item} />
+        {description?.map((item: TypedObject, index: number) => (
+          <PortableText key={item?._key || `${index}`} value={item} />
         ))}
       </Box>
 

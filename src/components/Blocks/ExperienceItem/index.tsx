@@ -1,17 +1,24 @@
-import { Box, Flex, Text, Title, rem } from "@mantine/core";
-import Link from "next/link";
-import classes from "./ExperienceItem.module.css";
-import { Company, Experience, employmentTypes, workTypes } from "@/types";
-import Image from "next/image";
+import { Box, Title, rem } from "@mantine/core";
+import {
+  Company,
+  LanguagesTypes,
+  Position,
+  employmentTypes,
+  workTypes,
+} from "@/types";
 import { sanityImageUrl } from "~/sanity/lib/client";
 import { AdaptedDate } from "../../Bits/AdaptedDate";
 import { PositionItem } from "../Position";
+import Link from "next/link";
+import Image from "next/image";
+import classes from "./ExperienceItem.module.css";
 
 interface ExperienceItemProps {
   workTypes: workTypes;
   employmentTypes: employmentTypes;
   company: Company;
-  experience: Experience[];
+  experience: Position[];
+  locale: LanguagesTypes;
 }
 
 export const ExperienceItem = ({
@@ -19,6 +26,7 @@ export const ExperienceItem = ({
   experience,
   workTypes,
   employmentTypes,
+  locale,
 }: ExperienceItemProps) => {
   const {
     companyLogo,
@@ -45,7 +53,7 @@ export const ExperienceItem = ({
           </Title>
         </Link>
         <Box className={classes.workInfo}>
-          <AdaptedDate date={companyTotalMonth} />
+          <AdaptedDate date={companyTotalMonth} locale={locale} />
         </Box>
       </Box>
 
@@ -57,6 +65,7 @@ export const ExperienceItem = ({
             workTypes={workTypes}
             employmentTypes={employmentTypes}
             showTotal={experience?.length > 1}
+            locale={locale}
           />
         ))}
       </Box>

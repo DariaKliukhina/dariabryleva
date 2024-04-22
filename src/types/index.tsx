@@ -29,7 +29,7 @@ export type Company = {
 
 export type PositionRaw = {
   company: Company;
-  description: string;
+  description: TypedObject[];
   position: string;
   locationType: string;
   workType: string;
@@ -40,8 +40,8 @@ export type PositionRaw = {
   employmentType: string;
 };
 
-export type Experience = {
-  description: TypedObject | TypedObject[];
+export type Position = {
+  description: TypedObject[];
   positionTitle: string;
   locationType: string;
   workType: string;
@@ -52,3 +52,8 @@ export type Experience = {
   endDate?: PositionDate;
   employmentType: string;
 };
+
+export interface Experience {
+  company: Company;
+  experience: Position[];
+}

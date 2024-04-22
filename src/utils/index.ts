@@ -1,5 +1,5 @@
-import { Company, Position, PositionRaw } from "@/types";
-
+import { Company, Experience, Position, PositionRaw } from "@/types";
+import pluralizeRus from "plural-ru";
 const CARIER_START = 2018;
 const NUMBER_OF_MONTH = 12;
 
@@ -18,6 +18,7 @@ export const MONTH = [
   "December",
 ];
 
+// generate a list of month
 export const generateMonthOptions = () => {
   return MONTH.map((item, index) => ({ title: item, value: index + 1 }));
 };
@@ -37,21 +38,65 @@ export const generateYearsOptions = () => {
   return result;
 };
 
-// get a number of monts and calculate a total number of years and rest of the month
-export const adaptTotlaDate = (total: number) => {
+// pluralize words
+export const pluralize = (
+  val: number,
+  rules: [string, string][],
+  lang: string = "en-US"
+) => {
+  const ordinalRules = new Intl.PluralRules(lang, { type: "ordinal" });
+
+  const results = new Map(rules);
+  const rule = ordinalRules.select(val);
+  const result = results.get(rule);
+  return `${val} ${result}`;
+};
+
+// get a number of monts
+// calculate a total number of years and rest of the month
+// pluralize
+export const adaptTotlaDate = (total: number, locale = "en") => {
   const restMonth = total % NUMBER_OF_MONTH;
   const totalYears = (total - restMonth) / NUMBER_OF_MONTH;
 
-  const adaptedYears = totalYears
-    ? totalYears === 1
-      ? "1 year"
-      : `${totalYears} years`
-    : "";
-  const adaptedMonth = restMonth
-    ? restMonth === 1
-      ? "1 mo"
-      : `${restMonth} mos`
-    : "";
+  let adaptedYears;
+  let adaptedMonth;
+
+  switch (locale) {
+    case "en": {
+      if (totalYears) {
+        adaptedYears = pluralize(totalYears, [
+          ["one", "year"],
+          ["two", "years"],
+          ["few", "years"],
+          ["other", "years"],
+        ]);
+      }
+      if (restMonth) {
+        adaptedMonth = pluralize(restMonth, [
+          ["one", "month"],
+          ["two", "month"],
+          ["few", "months"],
+          ["other", "months"],
+        ]);
+      }
+
+      break;
+    }
+    case "ru": {
+      if (totalYears) {
+        adaptedYears =
+          totalYears + " " + pluralizeRus(totalYears, "год", "года", "лет");
+      }
+      if (restMonth) {
+        adaptedMonth =
+          restMonth +
+          " " +
+          pluralizeRus(restMonth, "месяц", "месяца", "месяцев");
+      }
+      break;
+    }
+  }
 
   return {
     adaptedYears,
@@ -61,7 +106,7 @@ export const adaptTotlaDate = (total: number) => {
 
 // combine positions belonging to the same company
 export const adaptExperience = (list: PositionRaw[]) => {
-  const result: Position[] = [];
+  const result: Experience[] = [];
   let previousCompany: Company;
 
   list.forEach((position) => {
@@ -87,7 +132,7 @@ export const adaptExperience = (list: PositionRaw[]) => {
       }
     }
 
-    const positionDescription = {
+    const positionDescription: Position = {
       description: position.description,
       locationType: position.locationType,
       workType: position.workType,

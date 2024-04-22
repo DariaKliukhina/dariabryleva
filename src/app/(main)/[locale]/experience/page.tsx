@@ -15,10 +15,12 @@ export default async function Experience({
 }: {
   params: PageParams;
 }) {
-  const data = await getData(experienceQuery, { lang: locale || DEFAULT_LOCALE });
+  const data = await getData(experienceQuery, {
+    lang: locale || DEFAULT_LOCALE,
+  });
   return (
     <>
-      <ExperienceList list={data?.jobsList} />
+      <ExperienceList list={data?.jobsList} locale={locale} />
     </>
   );
 }
