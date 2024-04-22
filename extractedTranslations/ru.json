@@ -9,7 +9,9 @@
   },
   "Experience": {
     "title": "Опыт работы",
-    "teaching": "обучение",
-    "development": "разработка"
+    "teaching": "Обучение",
+    "development": "Разработка",
+    "full-time": "Полная занятость",
+    "part-time": "Частичная занятость"
   }
 }

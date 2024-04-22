@@ -1,0 +1,35 @@
+.headerInfo {
+  /* padding-left: rem(16px); */
+}
+
+.root {
+  padding-left: rem(80px);
+  position: relative;
+}
+
+.imageWrapper {
+  width: rem(60px);
+  height: rem(60px);
+  line-height: 0;
+  overflow: hidden;
+  position: absolute;
+  top: rem(4);
+  left: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.workInfo {
+  p {
+    font-size: rem(14px);
+    opacity: 0.6;
+  }
+}
+
+.title {
+  font-weight: 500;
+}

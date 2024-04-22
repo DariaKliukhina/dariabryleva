@@ -97,7 +97,7 @@ export default defineType({
       type: "string",
       options: {
         list: [
-          { title: "Permanent Full-time", value: "fulltime" },
+          { title: "Permanent Full-time", value: "full-time" },
           { title: "Part-time", value: "part-time" },
         ],
         layout: "radio",
