@@ -91,6 +91,7 @@ export const adaptExperience = (list: PositionRaw[]) => {
       description: position.description,
       locationType: position.locationType,
       workType: position.workType,
+      employmentType: position.employmentType,
       positionTitle: position.position,
       technologies: position.technologies,
       currentWork: position.currentWork,

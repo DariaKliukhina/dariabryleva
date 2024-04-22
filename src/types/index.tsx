@@ -1,6 +1,11 @@
+import { TypedObject } from "sanity";
+
 export type LanguagesTypes = "en" | "ru";
 
 export type workTypes = {
+  [key: string]: string;
+};
+export type employmentTypes = {
   [key: string]: string;
 };
 
@@ -32,10 +37,11 @@ export type PositionRaw = {
   startDate: PositionDate;
   endDate?: PositionDate;
   currentWork: boolean;
+  employmentType: string;
 };
 
-type Experience = {
-  description: string;
+export type Experience = {
+  description: TypedObject | TypedObject[];
   positionTitle: string;
   locationType: string;
   workType: string;
@@ -44,9 +50,5 @@ type Experience = {
   totalMonth: number;
   startDate: PositionDate;
   endDate?: PositionDate;
+  employmentType: string;
 };
-
-export interface Position {
-  company: Company;
-  experience: Experience[];
-}

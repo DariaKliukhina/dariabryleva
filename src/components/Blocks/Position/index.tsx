@@ -1,118 +1,81 @@
 import { Box, Flex, Text, Title, rem } from "@mantine/core";
-import Link from "next/link";
 import classes from "./Position.module.css";
-import { Position, workTypes } from "@/types";
-import Image from "next/image";
-import { sanityImageUrl } from "~/sanity/lib/client";
+import { Experience, employmentTypes, workTypes } from "@/types";
 import { PortableText } from "@portabletext/react";
-import { MONTH, adaptTotlaDate } from "@/utils";
+import { MONTH } from "@/utils";
+import { AdaptedDate } from "../../Bits/AdaptedDate";
 
-interface PositionItemProps extends Position {
+interface PositionItemProps {
   workTypes: workTypes;
+  employmentTypes: employmentTypes;
+  experience: Experience;
+  showTotal?: boolean;
 }
 
 export const PositionItem = ({
-  company,
   experience,
   workTypes,
+  employmentTypes,
+  showTotal = true,
 }: PositionItemProps) => {
   const {
-    companyLogo,
-    companyName,
-    link,
-    totalMonth: companyTotalMonth,
-  } = company;
-
-  const adaptedTotalDate = adaptTotlaDate(companyTotalMonth);
+    description,
+    locationType,
+    workType,
+    positionTitle,
+    technologies,
+    totalMonth,
+    startDate,
+    endDate,
+    employmentType,
+  } = experience;
 
   return (
-    <Box className={classes.root}>
-      <Box className={classes.imageWrapper}>
-        <Image
-          src={sanityImageUrl(companyLogo).url()}
-          width={150}
-          height={150}
-          alt={companyName || ""}
-          priority
-        />
-      </Box>
-      <Box className={classes.headerInfo}>
-        <Link href={link}>
-          {" "}
-          <Title order={3} size={rem(30)} className={classes.title}>
-            {companyName}
+    <Box className={classes.positionItem}>
+      <Flex justify="space-between" className={classes.header}>
+        <Box className={classes.workInfo}>
+          <Title order={4} size={rem(20)} className={classes.title}>
+            {positionTitle}
           </Title>
-        </Link>
+
+          <Flex>
+            <Text>
+              {MONTH[startDate.month - 1]} {startDate.year} -
+              {endDate
+                ? ` ${`${MONTH[endDate.month - 1]} ${endDate.year}`}`
+                : " Present"}
+            </Text>
+            {showTotal ? (
+              <>
+                <Text>, </Text>&nbsp;
+                <AdaptedDate date={totalMonth} />
+              </>
+            ) : (
+              ""
+            )}
+          </Flex>
+
+          <Text>{locationType}</Text>
+        </Box>
+
         <Flex gap={6}>
-          {adaptedTotalDate.adaptedYears && (
-            <Text>{adaptedTotalDate.adaptedYears}</Text>
-          )}
-          {adaptedTotalDate.adaptedMonth && (
-            <Text>{adaptedTotalDate.adaptedMonth}</Text>
-          )}
+          <Box>{employmentTypes[employmentType]}</Box>
+          <Box>{workTypes[workType]}</Box>
         </Flex>
+      </Flex>
+      <Box className={classes.description}>
+        {description?.map((item, index) => (
+          <PortableText key={item[0]?._key || index} value={item} />
+        ))}
       </Box>
 
-      <Box>
-        {experience?.map((experienceItem) => {
-          const {
-            description,
-            locationType,
-            workType,
-            positionTitle,
-            technologies,
-            totalMonth,
-            startDate,
-            endDate,
-          } = experienceItem;
-
-          const adaptedPositionlDate = adaptTotlaDate(totalMonth);
-
-          return (
-            <Box
-              key={companyName + positionTitle}
-              className={classes.positionItem}
-            >
-              <Flex justify="space-between" className={classes.header}>
-                <Box className={classes.workInfo}>
-                  <Title order={4} size={rem(24)} className={classes.title}>
-                    {positionTitle}
-                  </Title>
-                  <Flex gap={6}>
-                    {adaptedPositionlDate.adaptedYears && (
-                      <Text>{adaptedPositionlDate.adaptedYears}</Text>
-                    )}
-                    {adaptedPositionlDate.adaptedMonth && (
-                      <Text>{adaptedPositionlDate.adaptedMonth}</Text>
-                    )}
-                  </Flex>
-                  <Text>
-                    {MONTH[startDate.month - 1]} {startDate.year} -{" "}
-                    {endDate
-                      ? ` ${`${MONTH[endDate.month - 1]} ${endDate.year}`}`
-                      : "Present"}
-                  </Text>
-                  <Text>{locationType}</Text>
-                </Box>
-                <Box>{workTypes[workType]}</Box>
-              </Flex>
-              <Box className={classes.description}>
-                {description?.map((item, index) => (
-                  <PortableText key={item[0]?._key || index} value={item} />
-                ))}
-              </Box>
-
-              <Flex wrap="wrap" className={classes.technologies} gap={rem(18)}>
-                {technologies?.map((item) => (
-                  <Text key={item.slug} className={classes.technoligy}>
-                    {item.title}
-                  </Text>
-                ))}
-              </Flex>
-            </Box>
-          );
-        })}
-      </Box>
+      <Flex wrap="wrap" className={classes.technologies} gap={rem(18)}>
+        {technologies?.map((item) => (
+          <Text key={item.slug} className={classes.technoligy}>
+            {item.title}
+          </Text>
+        ))}
+      </Flex>
     </Box>
   );
 };

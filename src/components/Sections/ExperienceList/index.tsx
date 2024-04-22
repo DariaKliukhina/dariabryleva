@@ -1,5 +1,5 @@
-import { Position, PositionRaw } from "@/types";
-import { PositionItem } from "../../Blocks/Position";
+import { PositionRaw } from "@/types";
+import { ExperienceItem } from "../../Blocks/ExperienceItem";
 import { Box, Center, Title, rem } from "@mantine/core";
 import { useTranslations } from "next-intl";
 import classes from "./ExperienceList.module.css";
@@ -11,9 +11,15 @@ type ExperienceListProps = {
 
 export const ExperienceList = ({ list }: ExperienceListProps) => {
   const t = useTranslations("Experience");
+
   const workTypes = {
     development: t("development"),
     teaching: t("teaching"),
+  };
+
+  const employmentTypes = {
+    "full-time": t("full-time"),
+    "part-time": t("part-time"),
   };
 
   const experience = adaptExperience(list);
@@ -28,7 +34,11 @@ export const ExperienceList = ({ list }: ExperienceListProps) => {
       <Box className={classes.wrapper}>
         {experience?.map((item) => (
           <Box key={item.company.companyName} className={classes.position}>
-            <PositionItem {...item} workTypes={workTypes} />
+            <ExperienceItem
+              {...item}
+              workTypes={workTypes}
+              employmentTypes={employmentTypes}
+            />
           </Box>
         ))}
       </Box>

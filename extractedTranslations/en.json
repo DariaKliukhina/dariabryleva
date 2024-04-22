@@ -9,7 +9,9 @@
   },
   "Experience": {
     "title": "Experience",
-    "teaching": "teaching",
-    "development": "development"
+    "teaching": "Teaching",
+    "development": "Development",
+    "full-time": "Full-time",
+    "part-time": "Part-time"
   }
 }
