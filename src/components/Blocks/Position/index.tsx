@@ -1,11 +1,12 @@
 import { Box, Flex, Text, Title, rem } from "@mantine/core";
-import { Position, LanguagesTypes, employmentTypes, workTypes } from "@/types";
+import { Position, LanguagesTypes } from "@/types";
 import { PortableText } from "@portabletext/react";
 import { AdaptedDate } from "../../Bits/AdaptedDate";
 import { MONTH } from "@/utils";
 import classes from "./Position.module.css";
 import { TypedObject } from "sanity";
 import { useTranslations } from "next-intl";
+import { Tag } from "../../Bits/Tag";
 
 interface PositionItemProps {
   experience: Position;
@@ -56,13 +57,12 @@ export const PositionItem = ({
               ""
             )}
           </Flex>
-
-          <Text>{t(locationType)}</Text>
         </Box>
 
-        <Flex gap={6}>
-          <Box>{t(employmentType)}</Box>
-          <Box>{t(workType)}</Box>
+        <Flex gap={6} align="center">
+          <Tag>{t(locationType)}</Tag>
+          <Tag>{t(employmentType)}</Tag>
+          <Tag>{t(workType)}</Tag>
         </Flex>
       </Flex>
       <Box className={classes.description}>
