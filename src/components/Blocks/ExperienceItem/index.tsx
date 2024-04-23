@@ -14,8 +14,6 @@ import Image from "next/image";
 import classes from "./ExperienceItem.module.css";
 
 interface ExperienceItemProps {
-  workTypes: workTypes;
-  employmentTypes: employmentTypes;
   company: Company;
   experience: Position[];
   locale: LanguagesTypes;
@@ -24,8 +22,6 @@ interface ExperienceItemProps {
 export const ExperienceItem = ({
   company,
   experience,
-  workTypes,
-  employmentTypes,
   locale,
 }: ExperienceItemProps) => {
   const {
@@ -62,8 +58,6 @@ export const ExperienceItem = ({
           <PositionItem
             key={companyName + experienceItem.positionTitle}
             experience={experienceItem}
-            workTypes={workTypes}
-            employmentTypes={employmentTypes}
             showTotal={experience?.length > 1}
             locale={locale}
           />

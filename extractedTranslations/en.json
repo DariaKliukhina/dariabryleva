@@ -12,6 +12,10 @@
     "teaching": "Teaching",
     "development": "Development",
     "full-time": "Full-time",
-    "part-time": "Part-time"
+    "part-time": "Part-time",
+    "present": "Present",
+    "on-site": "on-site",
+    "remote": "remote",
+    "hybrid": "hybrid"
   }
 }

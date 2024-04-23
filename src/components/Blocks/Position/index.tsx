@@ -5,10 +5,9 @@ import { AdaptedDate } from "../../Bits/AdaptedDate";
 import { MONTH } from "@/utils";
 import classes from "./Position.module.css";
 import { TypedObject } from "sanity";
+import { useTranslations } from "next-intl";
 
 interface PositionItemProps {
-  workTypes: workTypes;
-  employmentTypes: employmentTypes;
   experience: Position;
   showTotal?: boolean;
   locale: LanguagesTypes;
@@ -16,8 +15,6 @@ interface PositionItemProps {
 
 export const PositionItem = ({
   experience,
-  workTypes,
-  employmentTypes,
   showTotal = true,
   locale,
 }: PositionItemProps) => {
@@ -33,6 +30,7 @@ export const PositionItem = ({
     employmentType,
   } = experience;
 
+  const t = useTranslations("Experience");
   return (
     <Box className={classes.positionItem}>
       <Flex justify="space-between" className={classes.header}>
@@ -46,8 +44,9 @@ export const PositionItem = ({
               {MONTH[startDate.month - 1]} {startDate.year} -
               {endDate
                 ? ` ${`${MONTH[endDate.month - 1]} ${endDate.year}`}`
-                : " Present"}
+                : " " + t("present")}
             </Text>
+
             {showTotal ? (
               <>
                 <Text>, </Text>&nbsp;
@@ -58,12 +57,12 @@ export const PositionItem = ({
             )}
           </Flex>
 
-          <Text>{locationType}</Text>
+          <Text>{t(locationType)}</Text>
         </Box>
 
         <Flex gap={6}>
-          <Box>{employmentTypes[employmentType]}</Box>
-          <Box>{workTypes[workType]}</Box>
+          <Box>{t(employmentType)}</Box>
+          <Box>{t(workType)}</Box>
         </Flex>
       </Flex>
       <Box className={classes.description}>

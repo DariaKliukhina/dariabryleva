@@ -12,17 +12,6 @@ type ExperienceListProps = {
 
 export const ExperienceList = ({ list, locale }: ExperienceListProps) => {
   const t = useTranslations("Experience");
-
-  const workTypes = {
-    development: t("development"),
-    teaching: t("teaching"),
-  };
-
-  const employmentTypes = {
-    "full-time": t("full-time"),
-    "part-time": t("part-time"),
-  };
-
   const experience = adaptExperience(list);
 
   return (
@@ -36,12 +25,7 @@ export const ExperienceList = ({ list, locale }: ExperienceListProps) => {
       <Box className={classes.wrapper}>
         {experience?.map((item) => (
           <Box key={item?.company?.companyName} className={classes.position}>
-            <ExperienceItem
-              {...item}
-              workTypes={workTypes}
-              employmentTypes={employmentTypes}
-              locale={locale}
-            />
+            <ExperienceItem {...item} locale={locale} />
           </Box>
         ))}
       </Box>
