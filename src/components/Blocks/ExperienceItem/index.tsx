@@ -1,9 +1,5 @@
 import { Box, Flex, Title, rem } from "@mantine/core";
-import {
-  Company,
-  LanguagesTypes,
-  Position,
-} from "@/types";
+import { Company, LanguagesTypes, Position } from "@/types";
 import { sanityImageUrl } from "~/sanity/lib/client";
 import { AdaptedDate } from "../../Bits/AdaptedDate";
 import { PositionItem } from "../Position";
@@ -43,7 +39,7 @@ export const ExperienceItem = ({
         </Box>
         <Box className={classes.headerInfo}>
           <Link href={link}>
-            <Title order={3} size={rem(28)} className={classes.title}>
+            <Title order={3} size={rem(26)} className={classes.title}>
               {companyName}
             </Title>
           </Link>

@@ -1,5 +1,4 @@
 .headerInfo {
-  /* padding-left: rem(16px); */
 }
 
 .root {
@@ -15,6 +14,11 @@
   top: rem(4);
   left: rem(-16px);
   transform: translateX(-100%);
+
+  @media (max-width: $mantine-breakpoint-xxxl) {
+    position: unset;
+    transform: translateX(0);
+  }
 
   img {
     width: 100%;
