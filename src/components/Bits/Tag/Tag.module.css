@@ -1,0 +1,10 @@
+.root {
+  padding: rem(2px) rem(16px);
+  background-color: light-dark(
+    var(--mantine-color-light-2),
+    var(--mantine-color-dark-3)
+  );
+  border-radius: rem(16px);
+  font-size: rem(14px);
+  color: var(--mantine-color-black);
+}

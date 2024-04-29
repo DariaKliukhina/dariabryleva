@@ -1,9 +1,7 @@
 .headerInfo {
-  /* padding-left: rem(16px); */
 }
 
 .root {
-  padding-left: rem(80px);
   position: relative;
 }
 
@@ -14,7 +12,13 @@
   overflow: hidden;
   position: absolute;
   top: rem(4);
-  left: 0;
+  left: rem(-16px);
+  transform: translateX(-100%);
+
+  @media (max-width: $mantine-breakpoint-xxxl) {
+    position: unset;
+    transform: translateX(0);
+  }
 
   img {
     width: 100%;

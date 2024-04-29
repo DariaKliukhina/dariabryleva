@@ -1,11 +1,5 @@
-import { Box, Title, rem } from "@mantine/core";
-import {
-  Company,
-  LanguagesTypes,
-  Position,
-  employmentTypes,
-  workTypes,
-} from "@/types";
+import { Box, Flex, Title, rem } from "@mantine/core";
+import { Company, LanguagesTypes, Position } from "@/types";
 import { sanityImageUrl } from "~/sanity/lib/client";
 import { AdaptedDate } from "../../Bits/AdaptedDate";
 import { PositionItem } from "../Position";
@@ -14,8 +8,6 @@ import Image from "next/image";
 import classes from "./ExperienceItem.module.css";
 
 interface ExperienceItemProps {
-  workTypes: workTypes;
-  employmentTypes: employmentTypes;
   company: Company;
   experience: Position[];
   locale: LanguagesTypes;
@@ -24,8 +16,6 @@ interface ExperienceItemProps {
 export const ExperienceItem = ({
   company,
   experience,
-  workTypes,
-  employmentTypes,
   locale,
 }: ExperienceItemProps) => {
   const {
@@ -37,33 +27,33 @@ export const ExperienceItem = ({
 
   return (
     <Box className={classes.root}>
-      <Box className={classes.imageWrapper}>
-        <Image
-          src={sanityImageUrl(companyLogo).url()}
-          width={150}
-          height={150}
-          alt={companyName || ""}
-          priority
-        />
-      </Box>
-      <Box className={classes.headerInfo}>
-        <Link href={link}>
-          <Title order={3} size={rem(28)} className={classes.title}>
-            {companyName}
-          </Title>
-        </Link>
-        <Box className={classes.workInfo}>
-          <AdaptedDate date={companyTotalMonth} locale={locale} />
+      <Flex gap={rem(16)}>
+        <Box className={classes.imageWrapper}>
+          <Image
+            src={sanityImageUrl(companyLogo).url()}
+            width={150}
+            height={150}
+            alt={companyName || ""}
+            priority
+          />
         </Box>
-      </Box>
+        <Box className={classes.headerInfo}>
+          <Link href={link}>
+            <Title order={3} size={rem(26)} className={classes.title}>
+              {companyName}
+            </Title>
+          </Link>
+          <Box className={classes.workInfo}>
+            <AdaptedDate date={companyTotalMonth} locale={locale} />
+          </Box>
+        </Box>
+      </Flex>
 
       <Box>
         {experience?.map((experienceItem) => (
           <PositionItem
             key={companyName + experienceItem.positionTitle}
             experience={experienceItem}
-            workTypes={workTypes}
-            employmentTypes={employmentTypes}
             showTotal={experience?.length > 1}
             locale={locale}
           />

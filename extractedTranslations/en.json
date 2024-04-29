@@ -1,6 +1,6 @@
 {
   "Menu": {
-    "home": "Home",
+    "home": "Daria Bryleva",
     "experience": "Experience",
     "reviews": "Reviews"
   },
@@ -9,9 +9,14 @@
   },
   "Experience": {
     "title": "Experience",
-    "teaching": "Teaching",
-    "development": "Development",
-    "full-time": "Full-time",
-    "part-time": "Part-time"
+    "download": "download resume",
+    "teaching": "teaching",
+    "development": "development",
+    "full-time": "full-time",
+    "part-time": "part-time",
+    "present": "Present",
+    "on-site": "on-site",
+    "remote": "remote",
+    "hybrid": "hybrid"
   }
 }

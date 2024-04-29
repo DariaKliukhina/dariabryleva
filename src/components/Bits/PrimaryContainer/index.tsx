@@ -1,6 +1,6 @@
 import React from "react";
 import { theme } from "@/theme";
-import { Container, ContainerProps } from "@mantine/core";
+import { Container, ContainerProps, rem } from "@mantine/core";
 
 interface ContaiernProps extends ContainerProps {
   children: React.ReactNode;
@@ -8,7 +8,11 @@ interface ContaiernProps extends ContainerProps {
 
 export const PrimaryContainer = ({ children, ...props }: ContaiernProps) => {
   return (
-    <Container size={theme?.other?.containerSize || "xl"} {...props}>
+    <Container
+      px={rem(26)}
+      size={theme?.other?.containerSize || "xl"}
+      {...props}
+    >
       {children}
     </Container>
   );

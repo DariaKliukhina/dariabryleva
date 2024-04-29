@@ -115,7 +115,7 @@ export const theme = createTheme({
   },
   other: {
     zIndex,
-    containerSize: rem(1600),
+    containerSize: rem(1400),
   },
   headings: {
     sizes: {
