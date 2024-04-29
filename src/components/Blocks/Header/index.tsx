@@ -14,7 +14,7 @@ import { IconPlant2 } from "@tabler/icons-react";
 type LinkProps = {
   label: string;
   link: string;
-}
+};
 
 type HeaderProps = {
   locale: LanguagesTypes;
@@ -46,12 +46,19 @@ export const Header = ({ locale, home, links }: HeaderProps) => {
             <IconPlant2 stroke={1.5} className={classes.iconHome} />
             {home}
           </Link>
-          <Group gap={16} visibleFrom="sm">
-            {items}
+          <Group>
+            <Group gap={16} visibleFrom="sm">
+              {items}
+            </Group>
             <LangSwitcher locale={locale} />
             <ColorSchemeSwitcher />
+            <Burger
+              opened={opened}
+              onClick={toggle}
+              size="sm"
+              hiddenFrom="sm"
+            />
           </Group>
-          <Burger opened={opened} onClick={toggle} size="sm" hiddenFrom="sm" />
         </div>
       </PrimaryContainer>
     </header>
