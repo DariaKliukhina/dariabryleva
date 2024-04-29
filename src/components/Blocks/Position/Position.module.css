@@ -28,18 +28,37 @@
 }
 
 .workInfo {
+  margin-bottom: rem(8px);
   p {
     font-size: rem(14px);
     opacity: 0.6;
   }
 }
 
-.technoligy {
-  font-size: rem(14px);
+.infoDescription {
+  p {
+    position: relative;
+    padding-right: rem(6px);
+    display: inline-block;
+    &::after {
+      content: "";
+      width: rem(2px);
+      height: rem(2px);
+      border-radius: 50%;
+      background-color: currentColor;
+      display: inline-block;
+      position: absolute;
+      top: 50%;
+      right: 0;
+    }
+    &:last-of-type::after {
+      display: none;
+    }
+  }
 }
 
 .positionItem {
-  margin-top: rem(20px);
+  margin-top: rem(26px);
 }
 
 .title {

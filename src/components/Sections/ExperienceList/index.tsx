@@ -16,13 +16,10 @@ export const ExperienceList = ({ list, locale }: ExperienceListProps) => {
 
   return (
     <Box>
-      <Center>
+      <Box className={classes.wrapper}>
         <Title order={2} size={rem(36)}>
           {t("title")}
         </Title>
-      </Center>
-      <br />
-      <Box className={classes.wrapper}>
         {experience?.map((item) => (
           <Box key={item?.company?.companyName} className={classes.position}>
             <ExperienceItem {...item} locale={locale} />

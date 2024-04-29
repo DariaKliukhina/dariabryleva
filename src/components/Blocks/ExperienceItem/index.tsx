@@ -1,10 +1,8 @@
-import { Box, Title, rem } from "@mantine/core";
+import { Box, Flex, Title, rem } from "@mantine/core";
 import {
   Company,
   LanguagesTypes,
   Position,
-  employmentTypes,
-  workTypes,
 } from "@/types";
 import { sanityImageUrl } from "~/sanity/lib/client";
 import { AdaptedDate } from "../../Bits/AdaptedDate";
@@ -33,25 +31,27 @@ export const ExperienceItem = ({
 
   return (
     <Box className={classes.root}>
-      <Box className={classes.imageWrapper}>
-        <Image
-          src={sanityImageUrl(companyLogo).url()}
-          width={150}
-          height={150}
-          alt={companyName || ""}
-          priority
-        />
-      </Box>
-      <Box className={classes.headerInfo}>
-        <Link href={link}>
-          <Title order={3} size={rem(28)} className={classes.title}>
-            {companyName}
-          </Title>
-        </Link>
-        <Box className={classes.workInfo}>
-          <AdaptedDate date={companyTotalMonth} locale={locale} />
+      <Flex gap={rem(16)}>
+        <Box className={classes.imageWrapper}>
+          <Image
+            src={sanityImageUrl(companyLogo).url()}
+            width={150}
+            height={150}
+            alt={companyName || ""}
+            priority
+          />
         </Box>
-      </Box>
+        <Box className={classes.headerInfo}>
+          <Link href={link}>
+            <Title order={3} size={rem(28)} className={classes.title}>
+              {companyName}
+            </Title>
+          </Link>
+          <Box className={classes.workInfo}>
+            <AdaptedDate date={companyTotalMonth} locale={locale} />
+          </Box>
+        </Box>
+      </Flex>
 
       <Box>
         {experience?.map((experienceItem) => (

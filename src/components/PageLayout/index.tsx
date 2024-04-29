@@ -7,7 +7,7 @@ import { useTranslations } from "next-intl";
 
 const links = [
   { link: "/experience", label: "experience" },
-  { link: "/reviews", label: "reviews" },
+  // { link: "/reviews", label: "reviews" },
 ];
 
 export const PageLayout = ({

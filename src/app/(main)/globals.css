@@ -108,3 +108,7 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+.pageContent {
+  padding-bottom: rem(40px);
+}

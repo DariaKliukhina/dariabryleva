@@ -34,48 +34,44 @@ export const PositionItem = ({
   const t = useTranslations("Experience");
   return (
     <Box className={classes.positionItem}>
-      <Flex justify="space-between" className={classes.header}>
-        <Box className={classes.workInfo}>
-          <Title order={4} size={rem(20)} className={classes.title}>
-            {positionTitle}
-          </Title>
-
-          <Flex>
-            <Text>
-              {MONTH[startDate.month - 1]} {startDate.year} -
-              {endDate
-                ? ` ${`${MONTH[endDate.month - 1]} ${endDate.year}`}`
-                : " " + t("present")}
-            </Text>
-
-            {showTotal ? (
-              <>
-                <Text>, </Text>&nbsp;
-                <AdaptedDate date={totalMonth} locale={locale} />
-              </>
-            ) : (
-              ""
-            )}
-          </Flex>
-        </Box>
-
-        <Flex gap={6} align="center">
-          <Tag>{t(locationType)}</Tag>
-          <Tag>{t(employmentType)}</Tag>
-          <Tag>{t(workType)}</Tag>
+      <Box className={classes.workInfo}>
+        <Title order={4} size={rem(20)} className={classes.title}>
+          {positionTitle}
+        </Title>
+        <Flex gap={6} align="center" className={classes.infoDescription}>
+          <Text>{t(locationType)}</Text>
+          <Text>{t(employmentType)}</Text>
+          <Text>{t(workType)}</Text>
         </Flex>
-      </Flex>
+
+        <Flex>
+          <Text>
+            {MONTH[startDate.month - 1]} {startDate.year} -
+            {endDate
+              ? ` ${`${MONTH[endDate.month - 1]} ${endDate.year}`}`
+              : " " + t("present")}
+          </Text>
+
+          {showTotal ? (
+            <>
+              <Text>, </Text>&nbsp;
+              <AdaptedDate date={totalMonth} locale={locale} />
+            </>
+          ) : (
+            ""
+          )}
+        </Flex>
+      </Box>
+
       <Box className={classes.description}>
         {description?.map((item: TypedObject, index: number) => (
           <PortableText key={item?._key || `${index}`} value={item} />
         ))}
       </Box>
 
-      <Flex wrap="wrap" className={classes.technologies} gap={rem(18)}>
+      <Flex wrap="wrap" className={classes.technologies} gap={rem(8)}>
         {technologies?.map((item) => (
-          <Text key={item.slug} className={classes.technoligy}>
-            {item.title}
-          </Text>
+          <Tag key={item.slug}>{item.title}</Tag>
         ))}
       </Flex>
     </Box>
