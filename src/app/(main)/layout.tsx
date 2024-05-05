@@ -1,5 +1,9 @@
 import React from "react";
+import { RootStyleRegistry } from "@/components";
 import { LanguagesTypes } from "@/types";
+import { Inter } from "next/font/google";
+
+const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({
   children,
@@ -10,7 +14,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang={locale}>
-      <body>{children}</body>
+      <body className={inter.className}>
+        <RootStyleRegistry>{children}</RootStyleRegistry>
+      </body>
     </html>
   );
 }

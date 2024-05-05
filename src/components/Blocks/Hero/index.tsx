@@ -18,7 +18,7 @@ export const Hero = ({ title, description, mainImage }: HeroProps) => {
       <Flex
         className={classes.container}
         direction={{ base: "column", lg: "row" }}
-        maw={{ base: rem(600), lg: rem(800), xl: rem(1000) }}
+        maw={{ base: rem(600), lg: rem(700), xl: rem(800) }}
       >
         {mainImage && (
           <Box className={classes.imageWrapper}>
@@ -39,7 +39,7 @@ export const Hero = ({ title, description, mainImage }: HeroProps) => {
           )}
           {description && <p>{description}</p>}
 
-          <Button variant="outline">{t("button")}</Button>
+          {/* <Button variant="outline">{t("button")}</Button> */}
         </Box>
       </Flex>
     </Center>

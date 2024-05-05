@@ -3,6 +3,13 @@ import pluralizeRus from "plural-ru";
 const CARIER_START = 2018;
 const NUMBER_OF_MONTH = 12;
 
+export const links = [
+  { link: "/experience", label: "experience" },
+  // { link: "/reviews", label: "reviews" },
+];
+
+export const footerLinks = [{ link: "/about-this-site", label: "about" }];
+
 export const MONTH = [
   "January",
   "February",
