@@ -65,7 +65,7 @@ export const PositionItem = ({
 
       <Box className={classes.description}>
         {description?.map((item: TypedObject, index: number) => (
-          <PortableText key={item?._key || `${index}`} value={item} />
+          <PortableText key={index} value={item} />
         ))}
       </Box>
 
