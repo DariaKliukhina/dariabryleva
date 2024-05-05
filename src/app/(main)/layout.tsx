@@ -1,5 +1,4 @@
 import React from "react";
-import { PageLayout } from "@/components";
 import { LanguagesTypes } from "@/types";
 
 export default function RootLayout({
