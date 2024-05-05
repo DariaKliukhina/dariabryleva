@@ -83,6 +83,7 @@ html,
 body {
   max-width: 100vw;
   min-width: 320px;
+  min-height: 100vh;
   overflow-x: hidden;
   font-size: calc((100vw - 320px) / (1920 - 320) * (24 - 14) + 14px);
 }
@@ -90,6 +91,9 @@ body {
 body {
   color: rgb(var(--foreground-rgb));
   transition: background-color 0.1s;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 
   @mixin light {
     color: var(--mantine-color-black);
@@ -100,6 +104,10 @@ body {
     background-color: var(--mantine-color-dark-10);
     color: var(--mantine-color-white);
   }
+}
+
+main {
+  flex-grow: 1;
 }
 
 a {

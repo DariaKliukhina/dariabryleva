@@ -1,15 +1,17 @@
 "use client";
 
-import { Group, Burger } from "@mantine/core";
+import { Group, Burger, Box, Drawer, Stack } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import classes from "./Header.module.css";
 import { PrimaryContainer } from "../../Bits/PrimaryContainer";
 
 import { LangSwitcher } from "../../Bits/LangSwitcher";
-import { Link } from "@/navigation";
 import { LanguagesTypes } from "@/types";
 import { ColorSchemeSwitcher } from "../../Bits/ColorSchemeSwitcher";
 import { IconPlant2 } from "@tabler/icons-react";
+import { Link, usePathname } from "@/navigation";
+import classes from "./Header.module.css";
+import { SocialLinks } from "@/components/Bits/SocialLinks";
+import { useEffect } from "react";
 
 type LinkProps = {
   label: string;
@@ -20,10 +22,24 @@ type HeaderProps = {
   locale: LanguagesTypes;
   home: string;
   links: LinkProps[];
+  mobileMenuLinks: LinkProps[];
 };
 
-export const Header = ({ locale, home, links }: HeaderProps) => {
+export const Header = ({
+  locale,
+  home,
+  links,
+  mobileMenuLinks,
+}: HeaderProps) => {
   const [opened, { toggle }] = useDisclosure(false);
+
+  const pathname = usePathname();
+
+  useEffect(() => {
+    if (opened) {
+      toggle();
+    }
+  }, [pathname]);
 
   const items = links?.map((link) => {
     return (
@@ -37,17 +53,29 @@ export const Header = ({ locale, home, links }: HeaderProps) => {
       </Link>
     );
   });
+  const mobileItems = mobileMenuLinks?.map((link) => {
+    return (
+      <Link
+        key={link.label}
+        href={link.link}
+        className={classes.link}
+        locale={locale}
+      >
+        {link.label}
+      </Link>
+    );
+  });
 
   return (
-    <header className={classes.header}>
+    <Box className={classes.header} component="header">
       <PrimaryContainer>
-        <div className={classes.inner}>
+        <Box className={classes.inner}>
           <Link href="/" aria-label="home" className={classes.home}>
             <IconPlant2 stroke={1.5} className={classes.iconHome} />
             {home}
           </Link>
           <Group>
-            <Group gap={16} visibleFrom="sm">
+            <Group gap={16} visibleFrom="xs">
               {items}
             </Group>
             <LangSwitcher locale={locale} />
@@ -56,11 +84,38 @@ export const Header = ({ locale, home, links }: HeaderProps) => {
               opened={opened}
               onClick={toggle}
               size="sm"
-              hiddenFrom="sm"
+              hiddenFrom="xs"
             />
           </Group>
-        </div>
+        </Box>
+
+        <Drawer
+          opened={opened}
+          onClose={toggle}
+          classNames={{
+            body: classes.mobileMenuBody,
+            content: classes.mobileMenuContent,
+          }}
+        >
+          <Stack justify="space-between" className={classes.mobileMenu}>
+            <Box>
+              <Link href="/" aria-label="home" className={classes.home}>
+                <IconPlant2 stroke={1.5} className={classes.iconHome} />
+                {home}
+              </Link>
+
+              <Stack className={classes.mobileNavigation}>
+                {items}
+                {mobileItems}
+              </Stack>
+            </Box>
+
+            <Box className={classes.social}>
+              <SocialLinks />
+            </Box>
+          </Stack>
+        </Drawer>
       </PrimaryContainer>
-    </header>
+    </Box>
   );
 };

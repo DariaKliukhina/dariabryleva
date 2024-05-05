@@ -61,6 +61,7 @@ export default function RootLayout({
   children: React.ReactNode;
   params: { locale: LanguagesTypes };
 }) {
+  
   return (
     <html lang={locale}>
       <body className={inter.className}>
