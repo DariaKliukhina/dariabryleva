@@ -85,7 +85,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
   overflow-x: hidden;
-  font-size: calc((100vw - 320px) / (1920 - 320) * (24 - 14) + 14px);
+  font-size: calc((100vw - 320px) / (1920 - 320) * (24 - 16) + 16px);
 }
 
 body {

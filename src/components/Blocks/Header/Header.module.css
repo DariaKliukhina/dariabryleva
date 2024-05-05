@@ -35,7 +35,7 @@
   display: flex;
   align-items: center;
   gap: rem(10px);
-  font-size: rem(26px);
+  /* font-size: rem(22px); */
 }
 
 .mobileMenu {

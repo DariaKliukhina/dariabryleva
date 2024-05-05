@@ -1,10 +1,10 @@
 import { PrimaryContainer } from "@/components";
 import { LanguagesTypes } from "@/types";
-import { Box, Flex, Group } from "@mantine/core";
-import Link from "next/link";
+import { Box, Group } from "@mantine/core";
 import React from "react";
 import classes from "./Footer.module.css";
 import { SocialLinks } from "@/components/Bits/SocialLinks";
+import { Link } from "@/navigation";
 
 type LinkProps = {
   label: string;
@@ -35,7 +35,7 @@ export const Footer = ({ locale, links }: FooterProps) => {
       <PrimaryContainer>
         <Box className={classes.root}>
           <Group justify="space-between" align="center">
-            <Group>{items}</Group>
+            <Box>{items}</Box>
             <SocialLinks />
           </Group>
         </Box>
