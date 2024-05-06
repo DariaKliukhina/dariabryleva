@@ -1,0 +1,7 @@
+.root {
+  width: 100%;
+
+  p {
+    font-size: rem(14px);
+  }
+}

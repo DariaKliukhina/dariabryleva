@@ -18,6 +18,7 @@ export default async function Experience({
   const data = await getData(experienceQuery, {
     lang: locale || DEFAULT_LOCALE,
   });
+
   return (
     <>
       <ExperienceList list={data?.jobsList} locale={locale} />

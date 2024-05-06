@@ -1,10 +1,9 @@
-import { Box, Button, Center, Flex, Title, rem } from "@mantine/core";
-import { useTranslations } from "next-intl";
+import { Box, Center, Flex, Title, rem } from "@mantine/core";
 import Image, { ImageProps } from "next/image";
 import { sanityImageUrl } from "~/sanity/lib/client";
-import classes from "./Hero.module.css";
 import { PortableText } from "@portabletext/react";
 import { TypedObject } from "sanity";
+import classes from "./Hero.module.css";
 
 type HeroProps = {
   title?: string;
@@ -19,8 +18,6 @@ export const Hero = ({
   description,
   mainImage,
 }: HeroProps) => {
-  const t = useTranslations("Index");
-
   return (
     <Center>
       <Flex
@@ -57,7 +54,6 @@ export const Hero = ({
               <PortableText key={index} value={item} />
             ))}
           </Box>
-
         </Box>
       </Flex>
     </Center>

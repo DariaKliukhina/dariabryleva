@@ -29,7 +29,19 @@ export type Company = {
 
 export type PositionRaw = {
   company: Company;
-  description: TypedObject[];
+  description?: TypedObject[];
+  position: string;
+  locationType: string;
+  workType: string;
+  technologies: Technologies[];
+  startDate: PositionDate;
+  endDate?: PositionDate;
+  currentWork: boolean;
+  employmentType: string;
+};
+
+export type PositionPreview = {
+  company: Company;
   position: string;
   locationType: string;
   workType: string;
@@ -41,7 +53,7 @@ export type PositionRaw = {
 };
 
 export type Position = {
-  description: TypedObject[];
+  description?: TypedObject[];
   positionTitle: string;
   locationType: string;
   workType: string;

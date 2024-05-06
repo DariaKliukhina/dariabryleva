@@ -1,0 +1,4 @@
+.position {
+  max-width: rem(240px);
+  flex-shrink: 0;
+}

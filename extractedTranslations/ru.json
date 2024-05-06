@@ -6,7 +6,10 @@
     "contacts": "Контакты",
     "about": "Об этом сайте"
   },
-  "Index": {},
+  "Index": {
+    "experience": "Мой опыт",
+    "more": "Подробнее"
+  },
   "Experience": {
     "title": "Опыт работы",
     "download": "сохранить резюме",
