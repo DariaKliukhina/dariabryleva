@@ -75,7 +75,7 @@ export const Header = ({
             {home}
           </Link>
           <Group>
-            <Group gap={16} visibleFrom="xs">
+            <Group gap={16} visibleFrom="xs" component="nav">
               {items}
             </Group>
             <LangSwitcher locale={locale} />

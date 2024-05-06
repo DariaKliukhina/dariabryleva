@@ -118,3 +118,30 @@ a {
 .pageContent {
   padding-bottom: rem(40px);
 }
+
+@define-mixin active {
+  &:active {
+    color: light-dark(
+      var(--mantine-color-light-6),
+      var(--mantine-color-light-3)
+    );
+  }
+}
+
+a {
+  transition: 0.2s;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    color: light-dark(var(--mantine-color-dark-6), var(--mantine-color-dark-3));
+  }
+
+  @mixin hover {
+    color: light-dark(var(--mantine-color-dark-6), var(--mantine-color-dark-3));
+  }
+
+  @mixin active;
+}

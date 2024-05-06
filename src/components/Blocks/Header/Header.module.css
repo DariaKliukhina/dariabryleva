@@ -1,5 +1,5 @@
 .header {
-  padding: rem(16px) 0;
+  padding: rem(8px) 0;
 }
 
 .inner {
@@ -13,13 +13,7 @@
   line-height: 1;
   text-decoration: none;
   color: inherit;
-
-  @mixin hover {
-  }
-
-  &:hover {
-    @include hover;
-  }
+  transition: 0.2s;
 }
 
 .linkLabel {
@@ -35,7 +29,6 @@
   display: flex;
   align-items: center;
   gap: rem(10px);
-  /* font-size: rem(22px); */
 }
 
 .mobileMenu {

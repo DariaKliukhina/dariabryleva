@@ -38,7 +38,7 @@ export const ExperienceItem = ({
           />
         </Box>
         <Box className={classes.headerInfo}>
-          <Link href={link}>
+          <Link href={link} target="_blank">
             <Title order={3} size={rem(26)} className={classes.title}>
               {companyName}
             </Title>
