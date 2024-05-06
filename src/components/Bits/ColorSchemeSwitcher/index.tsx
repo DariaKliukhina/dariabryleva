@@ -20,12 +20,20 @@ export const ColorSchemeSwitcher = () => {
       onClick={() =>
         setColorScheme(computedColorScheme === "light" ? "dark" : "light")
       }
-      variant="outline"
+      variant="subtle"
       size="md"
       aria-label="Toggle color scheme"
     >
-      <IconSun className={cx(classes.icon, classes.light)} stroke={1.5} aria-label="light" />
-      <IconMoon className={cx(classes.icon, classes.dark)} stroke={1.5} aria-label="dark" />
+      <IconSun
+        className={cx(classes.icon, classes.light)}
+        stroke={1.5}
+        aria-label="light"
+      />
+      <IconMoon
+        className={cx(classes.icon, classes.dark)}
+        stroke={1.5}
+        aria-label="dark"
+      />
     </ActionIcon>
   );
 };

@@ -17,8 +17,9 @@ export const Hero = ({ title, description, mainImage }: HeroProps) => {
     <Center>
       <Flex
         className={classes.container}
-        direction={{ base: "column", lg: "row" }}
-        maw={{ base: rem(600), lg: rem(700), xl: rem(800) }}
+        direction={{ base: "column" }}
+        align="center"
+        maw={{ base: rem(500), lg: rem(500), xl: rem(600) }}
       >
         {mainImage && (
           <Box className={classes.imageWrapper}>
