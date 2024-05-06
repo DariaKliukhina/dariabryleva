@@ -5,7 +5,7 @@ const NUMBER_OF_MONTH = 12;
 
 export const links = [
   { link: "/experience", label: "experience" },
-  // { link: "/reviews", label: "reviews" },
+  { link: "/contacts", label: "contacts" },
 ];
 
 export const footerLinks = [{ link: "/about-this-site", label: "about" }];
@@ -111,6 +111,30 @@ export const adaptTotlaDate = (total: number, locale = "en") => {
   };
 };
 
+export const calculateTotalMonth = (position: PositionRaw) => {
+  let totalMonth = 0;
+
+  const endDateYear = position.endDate?.year || new Date().getFullYear();
+  const endDateMonth = position.endDate?.month || new Date().getMonth() + 1;
+
+  // get total number of month for the current position
+  if (position.startDate.year === endDateYear) {
+    totalMonth = endDateMonth - position.startDate.month + 1;
+  } else {
+    for (let i = position.startDate.year; i <= endDateYear; i++) {
+      if (i === position.startDate.year) {
+        totalMonth += NUMBER_OF_MONTH - position.startDate.month;
+      } else if (i === endDateYear) {
+        totalMonth += endDateMonth + 1;
+      } else {
+        totalMonth += NUMBER_OF_MONTH;
+      }
+    }
+  }
+
+  return totalMonth;
+};
+
 // combine positions belonging to the same company
 export const adaptExperience = (list: PositionRaw[]) => {
   const result: Experience[] = [];
@@ -119,25 +143,7 @@ export const adaptExperience = (list: PositionRaw[]) => {
   list.forEach((position) => {
     let adaptedPosition;
 
-    let totalMonth = 0;
-
-    const endDateYear = position.endDate?.year || new Date().getFullYear();
-    const endDateMonth = position.endDate?.month || new Date().getMonth() + 1;
-
-    // get total number of month for the current position
-    if (position.startDate.year === endDateYear) {
-      totalMonth = endDateMonth - position.startDate.month + 1;
-    } else {
-      for (let i = position.startDate.year; i <= endDateYear; i++) {
-        if (i === position.startDate.year) {
-          totalMonth += NUMBER_OF_MONTH - position.startDate.month;
-        } else if (i === endDateYear) {
-          totalMonth += endDateMonth + 1;
-        } else {
-          totalMonth += NUMBER_OF_MONTH;
-        }
-      }
-    }
+    let totalMonth = calculateTotalMonth(position);
 
     const positionDescription: Position = {
       description: position.description,

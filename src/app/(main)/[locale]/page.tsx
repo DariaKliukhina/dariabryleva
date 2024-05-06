@@ -2,7 +2,7 @@ import { LanguagesTypes } from "@/types";
 import { homepageQuery } from "~/sanity/cms-queries";
 import { getData } from "~/sanity/sanity-utils";
 import { DEFAULT_LOCALE } from "@/navigation";
-import { Hero } from "@/components";
+import { ExperiencePreview, Hero } from "@/components";
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
@@ -20,12 +20,19 @@ export default async function Home({
   if (!data?.mainInfo) return <>no data</>;
   const {
     mainImage,
-    mainInfo: { title, description },
+    mainInfo: { title, description, subtitle },
+    experience: { jobsList },
   } = data;
 
   return (
     <>
-      <Hero title={title} description={description} mainImage={mainImage} />
+      <Hero
+        title={title}
+        subtitle={subtitle}
+        description={description}
+        mainImage={mainImage}
+      />
+      <ExperiencePreview list={jobsList} locale={locale} />
     </>
   );
 }

@@ -1,12 +1,14 @@
 {
   "Menu": {
-    "home": "Daria Bryleva",
+    "home": "Daria Brylёva",
     "experience": "Experience",
     "reviews": "Reviews",
+    "contacts": "Contacts",
     "about": "About this website"
   },
   "Index": {
-    "button": "test"
+    "experience": "My experience",
+    "more": "Learn more"
   },
   "Experience": {
     "title": "Experience",

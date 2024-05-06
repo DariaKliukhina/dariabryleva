@@ -6,3 +6,4 @@ export * from "./Blocks/Header";
 export * from "./Blocks/Hero";
 export * from "./Sections/ExperienceList";
 export * from "./Sections/NotFoundSection";
+export * from "./Sections/ExperiencePreview";

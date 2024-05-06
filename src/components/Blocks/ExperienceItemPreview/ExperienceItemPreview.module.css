@@ -1,0 +1,14 @@
+.root {
+  width: 100%;
+
+  p {
+    font-size: rem(14px);
+  }
+}
+
+.workInfo {
+  p {
+    font-size: rem(12px);
+    opacity: 0.6;
+  }
+}

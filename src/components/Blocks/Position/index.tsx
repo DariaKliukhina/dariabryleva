@@ -2,11 +2,11 @@ import { Box, Flex, Text, Title, rem } from "@mantine/core";
 import { Position, LanguagesTypes } from "@/types";
 import { PortableText } from "@portabletext/react";
 import { AdaptedDate } from "../../Bits/AdaptedDate";
-import { MONTH } from "@/utils";
 import classes from "./Position.module.css";
 import { TypedObject } from "sanity";
 import { useTranslations } from "next-intl";
 import { Tag } from "../../Bits/Tag";
+import { WorkDates } from "@/components/Bits/WorkDates";
 
 interface PositionItemProps {
   experience: Position;
@@ -45,12 +45,7 @@ export const PositionItem = ({
         </Flex>
 
         <Flex>
-          <Text>
-            {MONTH[startDate.month - 1]} {startDate.year} -
-            {endDate
-              ? ` ${`${MONTH[endDate.month - 1]} ${endDate.year}`}`
-              : " " + t("present")}
-          </Text>
+          <WorkDates startDate={startDate} endDate={endDate} title={t("present")} />
 
           {showTotal ? (
             <>

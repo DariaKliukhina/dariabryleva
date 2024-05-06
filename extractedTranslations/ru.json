@@ -3,10 +3,12 @@
     "home": "Дарья Брылёва",
     "experience": "Опыт",
     "reviews": "Отзывы",
+    "contacts": "Контакты",
     "about": "Об этом сайте"
   },
   "Index": {
-    "button": "тест"
+    "experience": "Мой опыт",
+    "more": "Подробнее"
   },
   "Experience": {
     "title": "Опыт работы",
