@@ -21,3 +21,23 @@
     object-fit: cover;
   }
 }
+
+.title {
+  @media (max-width: $mantine-breakpoint-md) {
+    font-size: rem(26px);
+  }
+}
+
+.description {
+  padding-top: rem(20px);
+
+  strong {
+    color: hotpink;
+  }
+
+  em {
+    color: var(--mantine-color-dark-3);
+    /* font-style: normal; */
+    font-weight: bold;
+  }
+}

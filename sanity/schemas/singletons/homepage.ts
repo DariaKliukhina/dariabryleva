@@ -42,11 +42,23 @@ export default defineType({
           title: "Subtitle",
           type: "i18n.string",
         },
-        {
-          name: "description",
+        defineField({
           title: "Description",
-          type: "i18n.text",
-        },
+          name: "description",
+          type: "object",
+          fields: [
+            defineField({
+              title: "en",
+              name: "en",
+              type: "blockContent",
+            }),
+            defineField({
+              title: "ru",
+              name: "ru",
+              type: "blockContent",
+            }),
+          ],
+        }),
       ],
     }),
   ],

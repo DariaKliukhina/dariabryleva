@@ -20,12 +20,17 @@ export default async function Home({
   if (!data?.mainInfo) return <>no data</>;
   const {
     mainImage,
-    mainInfo: { title, description },
+    mainInfo: { title, description, subtitle },
   } = data;
 
   return (
     <>
-      <Hero title={title} description={description} mainImage={mainImage} />
+      <Hero
+        title={title}
+        subtitle={subtitle}
+        description={description}
+        mainImage={mainImage}
+      />
     </>
   );
 }

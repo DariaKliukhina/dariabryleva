@@ -3,11 +3,10 @@
     "home": "Daria Bryleva",
     "experience": "Experience",
     "reviews": "Reviews",
+    "contacts": "Contacts",
     "about": "About this website"
   },
-  "Index": {
-    "button": "test"
-  },
+  "Index": {},
   "Experience": {
     "title": "Experience",
     "download": "download resume",
