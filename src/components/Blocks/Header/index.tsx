@@ -9,9 +9,9 @@ import { LanguagesTypes } from "@/types";
 import { ColorSchemeSwitcher } from "../../Bits/ColorSchemeSwitcher";
 import { IconPlant2 } from "@tabler/icons-react";
 import { Link, usePathname } from "@/navigation";
-import classes from "./Header.module.css";
 import { SocialLinks } from "@/components/Bits/SocialLinks";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import classes from "./Header.module.css";
 
 type LinkProps = {
   label: string;
@@ -32,10 +32,17 @@ export const Header = ({
   mobileMenuLinks,
 }: HeaderProps) => {
   const [opened, { toggle }] = useDisclosure(false);
+  const [activePage, setActivePage] = useState("/");
 
   const pathname = usePathname();
 
   useEffect(() => {
+    if (pathname === "/") {
+      setActivePage("/");
+    } else {
+      setActivePage(pathname);
+    }
+
     if (opened) {
       toggle();
     }
@@ -46,7 +53,9 @@ export const Header = ({
       <Link
         key={link.label}
         href={link.link}
-        className={classes.link}
+        className={`${classes.link} ${
+          link.link === activePage ? "active-page" : ""
+        }`}
         locale={locale}
       >
         {link.label}
@@ -58,7 +67,9 @@ export const Header = ({
       <Link
         key={link.label}
         href={link.link}
-        className={classes.link}
+        className={`${classes.link} ${
+          link.link === activePage ? "active-page" : ""
+        }`}
         locale={locale}
       >
         {link.label}

@@ -1,0 +1,6 @@
+.link {
+  transition: 0.2s;
+  &:hover {
+    color: light-dark(var(--mantine-color-dark-7), var(--mantine-color-dark-3));
+  }
+}
