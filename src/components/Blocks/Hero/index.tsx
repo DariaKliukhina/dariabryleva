@@ -9,7 +9,7 @@ import { TypedObject } from "sanity";
 type HeroProps = {
   title?: string;
   subtitle?: string;
-  description?: string;
+  description?: TypedObject[];
   mainImage?: ImageProps;
 };
 
