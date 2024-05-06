@@ -1,4 +1,8 @@
 .position {
-  max-width: rem(240px);
+  max-width: rem(300px);
   flex-shrink: 0;
+}
+
+.top {
+  margin-bottom: rem(20px);
 }
