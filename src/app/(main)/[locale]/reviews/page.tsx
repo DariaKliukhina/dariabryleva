@@ -9,5 +9,5 @@ export default async function Reviews({
 }: {
   params: PageParams;
 }) {
-  return <>test</>;
+  return <>Reviews</>;
 }

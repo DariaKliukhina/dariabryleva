@@ -1,3 +1,7 @@
+.wrapper {
+  padding-top: rem(40px);
+}
+
 .position {
   max-width: rem(300px);
   flex-shrink: 0;

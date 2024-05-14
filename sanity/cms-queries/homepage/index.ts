@@ -13,7 +13,6 @@ export const homepageQuery = groq`
      jobsList[]-> {
        company->{
         companyName,
-        "slug": slug.current,
         companyLocation,
         link,
         companyLogo

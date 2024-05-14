@@ -6,7 +6,6 @@ export const experienceQuery = groq`
    jobsList[]-> {
      company->{
       companyName,
-      "slug": slug.current,
       companyLocation,
       link,
       companyLogo

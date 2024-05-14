@@ -3,6 +3,7 @@ import { type SchemaTypeDefinition } from "sanity";
 import blockContent from "./schemas/blockContent";
 import homepage from "./schemas/singletons/homepage";
 import experience from "./schemas/singletons/experience";
+import about from "./schemas/singletons/about";
 import siteSettings from "./schemas/singletons/siteSettings";
 import technology from "./schemas/documents/technology";
 import company from "./schemas/documents/company";
@@ -15,6 +16,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     technology,
     company,
     position,
+    about,
 
     // pages
     homepage,
