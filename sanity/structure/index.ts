@@ -23,6 +23,12 @@ export const structure: StructureResolver = (S) =>
             .documentId("experience")
             .title("Experience")
         ),
+      S.listItem()
+        .title("About")
+        .id("about-list")
+        .child(
+          S.document().schemaType("about").documentId("about").title("About")
+        ),
 
       S.divider(),
       S.documentTypeListItem("position").title("Position").icon(CaseIcon),
