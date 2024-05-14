@@ -7,6 +7,7 @@ import { TypedObject } from "sanity";
 import { useTranslations } from "next-intl";
 import { Tag } from "../../Bits/Tag";
 import { WorkDates } from "@/components/Bits/WorkDates";
+import { ProseableText } from "../PortableText";
 
 interface PositionItemProps {
   experience: Position;
@@ -45,7 +46,11 @@ export const PositionItem = ({
         </Flex>
 
         <Flex>
-          <WorkDates startDate={startDate} endDate={endDate} title={t("present")} />
+          <WorkDates
+            startDate={startDate}
+            endDate={endDate}
+            title={t("present")}
+          />
 
           {showTotal ? (
             <>
@@ -59,9 +64,7 @@ export const PositionItem = ({
       </Box>
 
       <Box className={classes.description}>
-        {description?.map((item: TypedObject, index: number) => (
-          <PortableText key={index} value={item} />
-        ))}
+        {description && <ProseableText value={description} />}
       </Box>
 
       <Flex wrap="wrap" className={classes.technologies} gap={rem(8)}>

@@ -7,3 +7,4 @@ export * from "./Blocks/Hero";
 export * from "./Sections/ExperienceList";
 export * from "./Sections/NotFoundSection";
 export * from "./Sections/ExperiencePreview";
+export * from "./Sections/About";
