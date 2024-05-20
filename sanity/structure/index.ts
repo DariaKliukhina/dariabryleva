@@ -1,5 +1,5 @@
-import { CogIcon, TagIcon, CodeIcon, HomeIcon, CaseIcon } from "@sanity/icons";
-import { StructureResolver } from "sanity/desk";
+import { CogIcon, CodeIcon, HomeIcon, CaseIcon } from "@sanity/icons";
+import { StructureResolver } from "sanity/structure";
 
 export const structure: StructureResolver = (S) =>
   S.list()
