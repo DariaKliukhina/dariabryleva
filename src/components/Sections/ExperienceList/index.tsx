@@ -20,7 +20,7 @@ export const ExperienceList = ({ list, locale }: ExperienceListProps) => {
   const experience = adaptExperience(list);
 
   return (
-    <Box className={classes.wrapper}>
+    <>
       {/* <Title order={2} size={rem(32)}>
           {t("title")}
         </Title> */}
@@ -29,6 +29,6 @@ export const ExperienceList = ({ list, locale }: ExperienceListProps) => {
           <ExperienceItem {...item} locale={locale} />
         </Box>
       ))}
-    </Box>
+    </>
   );
 };

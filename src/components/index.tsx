@@ -1,4 +1,5 @@
 export * from "./Bits/Button";
+export * from "./Bits/ContentContainer";
 export * from "./Bits/PrimaryContainer";
 export * from "./PageLayout";
 export * from "./RootStyleRegistry";
