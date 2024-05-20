@@ -1,4 +1,4 @@
-import { ExperienceList } from "@/components";
+import { ContentContainer, ExperienceList } from "@/components";
 import { DEFAULT_LOCALE } from "@/navigation";
 import { LanguagesTypes } from "@/types";
 import { experienceQuery } from "~/sanity/cms-queries";
@@ -21,7 +21,9 @@ export default async function Experience({
 
   return (
     <>
-      <ExperienceList list={data?.jobsList} locale={locale} />
+      <ContentContainer>
+        <ExperienceList list={data?.jobsList} locale={locale} />
+      </ContentContainer>
     </>
   );
 }

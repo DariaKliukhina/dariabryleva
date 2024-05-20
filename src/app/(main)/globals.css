@@ -178,3 +178,10 @@ a {
 
   @mixin active;
 }
+
+.portableText {
+  img {
+    margin: 0 auto;
+    width: min(rem(500), 100%);
+  }
+}

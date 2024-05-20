@@ -1,4 +1,4 @@
-import { AboutSection } from "@/components";
+import { AboutSection, ContentContainer } from "@/components";
 import { DEFAULT_LOCALE } from "@/navigation";
 import { LanguagesTypes } from "@/types";
 import { aboutQuery } from "~/sanity/cms-queries/about";
@@ -17,5 +17,9 @@ export default async function About({
     lang: locale || DEFAULT_LOCALE,
   });
 
-  return <AboutSection {...data} />;
+  return (
+    <ContentContainer>
+      <AboutSection {...data} />
+    </ContentContainer>
+  );
 }
