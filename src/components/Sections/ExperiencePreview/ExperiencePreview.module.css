@@ -10,3 +10,12 @@
 .top {
   margin-bottom: rem(20px);
 }
+
+.listWrapper {
+  max-width: 100%;
+  overflow: hidden;
+
+  @media (max-width: $mantine-breakpoint-xs) {
+    height: calc(rem(110) * 3);
+  }
+}
