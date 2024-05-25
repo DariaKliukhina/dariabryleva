@@ -20,7 +20,7 @@ export const experienceQuery = groq`
      "position": position[$lang],
      technologies[]-> {
        title,
-       "slug": slug.current
+       "id": _id
      }
    }
 }[0]`;

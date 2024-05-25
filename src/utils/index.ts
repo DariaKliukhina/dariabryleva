@@ -8,7 +8,10 @@ export const links = [
   { link: "/contacts", label: "contacts" },
 ];
 
-export const footerLinks = [{ link: "/about-this-site", label: "about" }];
+export const footerLinks = [
+  { link: "/about-this-site", label: "about" },
+  { link: "/leave-review", label: "leaveReview" },
+];
 
 export const MONTH = [
   "January",

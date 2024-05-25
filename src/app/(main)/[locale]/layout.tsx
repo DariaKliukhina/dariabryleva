@@ -4,6 +4,8 @@ import { getData } from "~/sanity/sanity-utils";
 import { siteSettingsQuery } from "~/sanity/cms-queries";
 import { PageLayout } from "@/components";
 import { LanguagesTypes } from "@/types";
+import { Suspense } from "react";
+import { Loader } from "@mantine/core";
 
 export async function generateMetadata(): Promise<Metadata> {
   const data = await getData(siteSettingsQuery);
@@ -58,5 +60,9 @@ export default function RootLayout({
   children: React.ReactNode;
   params: { locale: LanguagesTypes };
 }) {
-  return <PageLayout locale={locale}>{children}</PageLayout>;
+  return (
+    <Suspense fallback={<Loader color="violet" />}>
+      <PageLayout locale={locale}>{children}</PageLayout>
+    </Suspense>
+  );
 }

@@ -4,7 +4,8 @@
     "experience": "Experience",
     "reviews": "Reviews",
     "contacts": "Contacts",
-    "about": "About this website"
+    "about": "About this website",
+    "leaveReview": "Leave a review"
   },
   "Index": {
     "experience": "My experience",
@@ -21,5 +22,8 @@
     "on-site": "on-site",
     "remote": "remote",
     "hybrid": "hybrid"
+  },
+  "Feedback": {
+    "buttonLabel": "Leave a review"
   }
 }

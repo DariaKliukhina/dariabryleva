@@ -1,6 +1,6 @@
 import { PrimaryContainer } from "@/components";
 import { LanguagesTypes } from "@/types";
-import { Box, Group } from "@mantine/core";
+import { Box, Flex, Group, rem } from "@mantine/core";
 import React from "react";
 import classes from "./Footer.module.css";
 import { SocialLinks } from "@/components/Bits/SocialLinks";
@@ -35,7 +35,9 @@ export const Footer = ({ locale, links }: FooterProps) => {
       <PrimaryContainer>
         <Box className={classes.root}>
           <Group justify="space-between" align="center">
-            <Box>{items}</Box>
+            <Flex align="center" wrap="wrap" gap={rem(12)}>
+              {items}
+            </Flex>
             <SocialLinks />
           </Group>
         </Box>

@@ -52,6 +52,23 @@ export default defineType({
         }),
       ],
     }),
+    defineField({
+      title: "Review message",
+      name: "reviewMessage",
+      type: "object",
+      fields: [
+        defineField({
+          title: "en",
+          name: "en",
+          type: "blockContent",
+        }),
+        defineField({
+          title: "ru",
+          name: "ru",
+          type: "blockContent",
+        }),
+      ],
+    }),
   ],
 
   preview: {

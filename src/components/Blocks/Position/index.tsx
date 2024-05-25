@@ -69,7 +69,7 @@ export const PositionItem = ({
 
       <Flex wrap="wrap" className={classes.technologies} gap={rem(8)}>
         {technologies?.map((item) => (
-          <Tag key={item.slug}>{item.title}</Tag>
+          <Tag key={item.id}>{item.title}</Tag>
         ))}
       </Flex>
     </Box>
