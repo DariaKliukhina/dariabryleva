@@ -4,7 +4,8 @@
     "experience": "Опыт",
     "reviews": "Отзывы",
     "contacts": "Контакты",
-    "about": "Об этом сайте"
+    "about": "Об этом сайте",
+    "leaveReview": "Оставить отзыв"
   },
   "Index": {
     "experience": "Мой опыт",
@@ -21,5 +22,8 @@
     "on-site": "в офисе",
     "remote": "удаленно",
     "hybrid": "гибрид"
+  },
+  "Feedback": {
+    "buttonLabel": "Оставить отзыв"
   }
 }

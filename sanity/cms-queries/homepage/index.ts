@@ -4,6 +4,7 @@ export const homepageQuery = groq`
 *[_type == "homepage"] {
   title,
   "mainImage": mainImage,
+  "reviewMessage": reviewMessage[$lang],
   mainInfo {
     "title": title[$lang],
     "subtitle": subtitle[$lang],
@@ -23,7 +24,7 @@ export const homepageQuery = groq`
        "position": position[$lang],
        technologies[]-> {
          title,
-         "slug": slug.current
+         "id": _id
        }
      }
   }[0]

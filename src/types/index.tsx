@@ -10,7 +10,7 @@ export type employmentTypes = {
 };
 
 export type Technologies = {
-  slug: string;
+  id: string;
   title: string;
 };
 
