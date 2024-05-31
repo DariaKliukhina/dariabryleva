@@ -25,5 +25,17 @@
   },
   "Feedback": {
     "buttonLabel": "Leave a review"
+  },
+  "Contacts": {
+    "name": "Name",
+    "namePlaceholder": "Full Name",
+    "nameError": "Please fill in your name",
+    "email": "Email",
+    "emailPlaceholder": "email@example.com",
+    "emailError": "Invalid email",
+    "message": "Message",
+    "messagePlaceholder": "Hello Daria,",
+    "messageError": "Please leave your message",
+    "submit": "Submit"
   }
 }

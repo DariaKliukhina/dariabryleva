@@ -141,7 +141,7 @@ a {
 @define-mixin active {
   &:active {
     color: light-dark(
-      var(--mantine-color-light-6),
+      var(--mantine-color-light-4),
       var(--mantine-color-light-3)
     );
   }

@@ -1,5 +1,5 @@
 import { LanguagesTypes, PositionRaw } from "@/types";
-import { Box, Center, Flex, Title, rem } from "@mantine/core";
+import { Box, Center, Flex, Stack, Title, rem } from "@mantine/core";
 import { useTranslations } from "next-intl";
 import classes from "./ExperiencePreview.module.css";
 import React from "react";
@@ -28,11 +28,8 @@ export const ExperiencePreview = ({
         </Box>
       </Flex>
 
-      <Box className={classes.listWrapper}>
-        <Flex
-          gap={{ base: rem(18), xs: rem(12) }}
-          direction={{ base: "column", xs: "row" }}
-        >
+      <Box className={classes.listWrapperDesktop} visibleFrom="xs">
+        <Flex gap={{ base: rem(18) }}>
           {list?.map((item) => (
             <Box
               key={`${item?.company?.companyName}-${item.position}`}
@@ -43,6 +40,18 @@ export const ExperiencePreview = ({
           ))}
         </Flex>
       </Box>
+
+      <Stack className={classes.listWrapperMobile} hiddenFrom="xs">
+        {list?.slice(0, 3).map((item) => (
+          <Box
+            key={`${item?.company?.companyName}-${item.position}`}
+            className={classes.position}
+          >
+            <ExperienceItemPreview position={item} locale={locale} />
+          </Box>
+        ))}
+      </Stack>
+
       <Box hiddenFrom="xs">
         <Center>
           <Link href={"/experience"}>{t("more")}</Link>
