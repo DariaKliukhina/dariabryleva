@@ -43,6 +43,7 @@ export const Contacts = ({
       email: "",
       name: "",
       message: "",
+      access_key: process.env.NEXT_PUBLIC_WEB3_ACCESS_KEY,
     },
 
     validate: {
@@ -52,8 +53,27 @@ export const Contacts = ({
     },
   });
 
+  async function handleSubmit(data) {
+    const json = JSON.stringify(data);
+    console.log(json);
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: json,
+    });
+    const result = await response.json();
+    if (result.success) {
+      console.log('AAAAA', result);
+    } else {
+      
+    }
+  }
+
   return (
-    <form onSubmit={form.onSubmit((values) => console.log(values))}>
+    <form onSubmit={form.onSubmit(handleSubmit)}>
       <Stack gap={rem(4)}>
         <Flex gap={rem(14)} direction={{ base: "column", xs: "row" }}>
           <TextInput
