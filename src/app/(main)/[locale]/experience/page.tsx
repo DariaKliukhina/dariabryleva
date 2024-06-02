@@ -10,7 +10,7 @@ type PageParams = {
   locale: LanguagesTypes;
 };
 
-export default async function Experience({
+export default async function ExperiencePage({
   params: { locale },
 }: {
   params: PageParams;

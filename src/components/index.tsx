@@ -10,3 +10,4 @@ export * from "./Sections/NotFoundSection";
 export * from "./Sections/ExperiencePreview";
 export * from "./Sections/About";
 export * from "./Sections/LeaveReview";
+export * from "./Sections/ContactsSection";

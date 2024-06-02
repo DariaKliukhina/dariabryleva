@@ -25,5 +25,18 @@
   },
   "Feedback": {
     "buttonLabel": "Оставить отзыв"
+  },
+  "Contacts": {
+    "name": "Имя",
+    "namePlaceholder": "Полное имя",
+    "nameError": "Пожалуйста введите Ваше имя",
+    "email": "Email",
+    "emailPlaceholder": "email@example.com",
+    "emailError": "Некорректный адрес",
+    "message": "Сообщение",
+    "messagePlaceholder": "Привет, Дарья,",
+    "messageError": "Пожалуйста оставьте сообщение",
+    "submit": "Отправить",
+    "title": "Связаться со мной"
   }
 }

@@ -2,7 +2,7 @@ import { LanguagesTypes } from "@/types";
 import { homepageQuery } from "~/sanity/cms-queries";
 import { getData } from "~/sanity/sanity-utils";
 import { DEFAULT_LOCALE } from "@/navigation";
-import { ExperiencePreview, Hero, LeaveReview } from "@/components";
+import { ContactsSection, ExperiencePreview, Hero, LeaveReview } from "@/components";
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
@@ -10,7 +10,7 @@ type PageParams = {
   locale: LanguagesTypes;
 };
 
-export default async function Home({
+export default async function HomePage({
   params: { locale },
 }: {
   params: PageParams;
@@ -35,6 +35,7 @@ export default async function Home({
       />
       <ExperiencePreview list={jobsList} locale={locale} />
       <LeaveReview description={reviewMessage} />
+      <ContactsSection />
     </>
   );
 }
