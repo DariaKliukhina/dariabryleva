@@ -10,7 +10,7 @@ type PageParams = {
   locale: LanguagesTypes;
 };
 
-export default async function Home({
+export default async function HomePage({
   params: { locale },
 }: {
   params: PageParams;

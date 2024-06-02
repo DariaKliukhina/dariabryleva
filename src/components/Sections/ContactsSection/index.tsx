@@ -1,4 +1,4 @@
-import { Box, Center, Flex, rem } from "@mantine/core";
+import { Box, Center, Title, rem } from "@mantine/core";
 import classes from "./Contacts.module.css";
 import { Contacts } from "@/components/Blocks/Contacts";
 import { useTranslations } from "next-intl";
@@ -22,7 +22,10 @@ export const ContactsSection = () => {
   return (
     <Center>
       <Box className={classes.root}>
-        <Contacts {...data}/>
+        <Title size={rem(38)} className={classes.title}>
+          {t("title")}
+        </Title>
+        <Contacts {...data} />
       </Box>
     </Center>
   );

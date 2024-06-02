@@ -2,3 +2,8 @@
   max-width: rem(560);
   width: 100%;
 }
+
+.title {
+  margin-bottom: rem(22);
+  text-align: center;
+}

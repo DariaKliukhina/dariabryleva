@@ -39,7 +39,6 @@ export const Contacts = ({
   submit,
 }: ContactsProps) => {
   const form = useForm({
-    mode: "uncontrolled",
     initialValues: {
       email: "",
       name: "",

@@ -10,7 +10,7 @@ export const links = [
 
 export const footerLinks = [
   { link: "/about-this-site", label: "about" },
-  { link: "/leave-review", label: "leaveReview" },
+  // { link: "/leave-review", label: "leaveReview" },
 ];
 
 export const MONTH = [
