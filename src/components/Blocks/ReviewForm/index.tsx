@@ -4,26 +4,30 @@ import {
   Button,
   Center,
   Flex,
+  Radio,
   Stack,
+  Text,
   TextInput,
   Textarea,
   rem,
 } from "@mantine/core";
 import { useForm } from "@mantine/form";
-import classes from "./Contacts.module.css";
 import { useState } from "react";
+import classes from "./ReviewForm.module.css";
 
-type ContactsProps = {
+type ReviewFormProps = {
   name: string;
   namePlaceholder: string;
   nameError: string;
   email: string;
   emailPlaceholder: string;
-  emailError: string;
   message: string;
   messagePlaceholder: string;
   messageError: string;
   submit: string;
+  howDoYouKnowMe: string;
+  teacher: string;
+  collegue: string;
   onSuccess: () => void;
 };
 
@@ -34,30 +38,32 @@ type FormProps = {
   access_key: string | undefined;
 };
 
-export const Contacts = ({
+export const ReviewForm = ({
   name,
   namePlaceholder,
   nameError,
   email,
   emailPlaceholder,
-  emailError,
   message,
   messagePlaceholder,
   messageError,
   submit,
+  howDoYouKnowMe,
+  teacher,
+  collegue,
   onSuccess,
-}: ContactsProps) => {
+}: ReviewFormProps) => {
   const [isLoading, setIsLoading] = useState(false);
   const form = useForm({
     initialValues: {
       email: "",
       name: "",
       message: "",
+      howDoYouKnowMe: "collegue",
       access_key: process.env.NEXT_PUBLIC_WEB3_ACCESS_KEY,
     },
 
     validate: {
-      email: (value) => (/^\S+@\S+$/.test(value) ? null : emailError),
       name: (value) => (value ? null : nameError),
       message: (value) => (value ? null : messageError),
     },
@@ -96,9 +102,29 @@ export const Contacts = ({
     >
       <form onSubmit={form.onSubmit(handleSubmit)}>
         <Stack gap={rem(4)}>
+          <Box className={classes.radioGroup}>
+            <Text size="sm" className={classes.label}>
+              {howDoYouKnowMe}
+            </Text>
+            <Flex gap={rem(14)}>
+              <Radio
+                label={collegue}
+                name="howDoYouKnowMe"
+                value="collegue"
+                defaultChecked
+                {...form.getInputProps("howDoYouKnowMe")}
+              />
+              <Radio
+                label={teacher}
+                name="howDoYouKnowMe"
+                value="teacher"
+                {...form.getInputProps("howDoYouKnowMe")}
+              />
+            </Flex>
+          </Box>
+
           <Flex gap={rem(14)} direction={{ base: "column", xs: "row" }}>
             <TextInput
-              withAsterisk
               label={email}
               placeholder={emailPlaceholder}
               className={classes.input}

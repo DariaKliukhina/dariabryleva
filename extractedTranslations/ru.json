@@ -39,5 +39,21 @@
     "submit": "Отправить",
     "title": "Связаться со мной",
     "success": "Спасибо! Ваше сообщение успешно отправлено!"
+  },
+  "LeaveReview": {
+    "title": "Вы можете оставить свой отзыв о моей работе",
+    "name": "Имя",
+    "namePlaceholder": "Полное имя",
+    "nameError": "Пожалуйста введите Ваше имя",
+    "email": "Email",
+    "emailPlaceholder": "email@example.com",
+    "message": "Отзыв",
+    "messagePlaceholder": "Оставьте Ваш отзыв",
+    "messageError": "Пожалуйста оставьте отзыв",
+    "submit": "Отправить",
+    "success": "Спасибо! Ваш отзыв успешно отправлено!",
+    "howDoYouKnowMe": "Откуда вы меня знаете",
+    "teacher": "Я была Вашим преподавателем",
+    "collegue": "Я была Вашим коллегой"
   }
 }
