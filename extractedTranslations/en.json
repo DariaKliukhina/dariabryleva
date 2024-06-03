@@ -39,5 +39,21 @@
     "submit": "Submit",
     "title": "Let's get in touch",
     "success": "Thank you! Your message has been sent successfully!"
+  },
+  "LeaveReview": {
+    "title": "Here you can leave your review about my work",
+    "name": "Name",
+    "namePlaceholder": "Full Name",
+    "nameError": "Please fill in your name",
+    "email": "Email",
+    "emailPlaceholder": "email@example.com",
+    "message": "Review",
+    "messagePlaceholder": "Leave your review here",
+    "messageError": "Please leave your review",
+    "submit": "Submit",
+    "success": "Thank you! Your review has been sent successfully!",
+    "howDoYouKnowMe": "how do you know me",
+    "teacher": "I was your teacher",
+    "collegue": "I was your collegue"
   }
 }
