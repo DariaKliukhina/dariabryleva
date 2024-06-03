@@ -26,6 +26,14 @@ type ContactsProps = {
   messagePlaceholder: string;
   messageError: string;
   submit: string;
+  onSuccess: () => void;
+};
+
+type FormProps = {
+  email: string;
+  name: string;
+  message: string;
+  access_key: string | undefined;
 };
 
 export const Contacts = ({
@@ -39,6 +47,7 @@ export const Contacts = ({
   messagePlaceholder,
   messageError,
   submit,
+  onSuccess,
 }: ContactsProps) => {
   const [isLoading, setIsLoading] = useState(false);
   const form = useForm({
@@ -56,7 +65,7 @@ export const Contacts = ({
     },
   });
 
-  async function handleSubmit(data) {
+  async function handleSubmit(data: FormProps) {
     setIsLoading(true);
     const json = JSON.stringify(data);
 
@@ -71,6 +80,7 @@ export const Contacts = ({
       const result = await response.json();
       if (result.success) {
         form.reset();
+        onSuccess();
       }
     } catch (error) {
       console.error(error);

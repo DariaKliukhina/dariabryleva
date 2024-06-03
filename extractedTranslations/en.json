@@ -37,6 +37,7 @@
     "messagePlaceholder": "Hello Daria,",
     "messageError": "Please leave your message",
     "submit": "Submit",
-    "title": "Let's get in touch"
+    "title": "Let's get in touch",
+    "success": "Thank you! Your message has been sent successfully!"
   }
 }

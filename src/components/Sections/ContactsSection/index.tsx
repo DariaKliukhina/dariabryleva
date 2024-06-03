@@ -1,6 +1,4 @@
-import { Box, Center, Title, rem } from "@mantine/core";
-import classes from "./Contacts.module.css";
-import { Contacts } from "@/components/Blocks/Contacts";
+import { ContactsWrapper } from "@/components/Blocks/ContactsWrapper";
 import { useTranslations } from "next-intl";
 
 export const ContactsSection = () => {
@@ -17,16 +15,9 @@ export const ContactsSection = () => {
     messagePlaceholder: t("messagePlaceholder"),
     messageError: t("messageError"),
     submit: t("submit"),
+    title: t("title"),
+    success: t("success"),
   };
 
-  return (
-    <Center>
-      <Box className={classes.root}>
-        <Title size={rem(38)} className={classes.title}>
-          {t("title")}
-        </Title>
-        <Contacts {...data} />
-      </Box>
-    </Center>
-  );
+  return <ContactsWrapper data={data} />;
 };
