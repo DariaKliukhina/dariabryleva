@@ -2,6 +2,7 @@ import { groq } from "next-sanity";
 
 export const aboutQuery = groq`
 *[_type == "about"] {
-  title,
+  githubLink,
+  "githubLinkLabel": githubLinkLabel[$lang],
   "content": content[$lang],
 }[0]`;
