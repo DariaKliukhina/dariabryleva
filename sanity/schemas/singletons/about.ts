@@ -11,6 +11,18 @@ export default defineType({
       type: "string",
     }),
     defineField({
+      name: "githubLink",
+      title: "Github link",
+      type: "string",
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: "githubLinkLabel",
+      title: "Github link label",
+      type: "i18n.string",
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
       title: "Content",
       name: "content",
       type: "object",

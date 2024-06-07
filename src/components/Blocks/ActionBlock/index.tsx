@@ -7,12 +7,14 @@ type ActionBlockProps = {
   description?: any[];
   buttonLabel: string;
   href: string;
+  target?: "_self" | "_blank"
 };
 
 export const ActionBlock = ({
   description,
   buttonLabel,
   href,
+  target="_self"
 }: ActionBlockProps) => {
   return (
     <Box className={classes.root}>
@@ -22,7 +24,7 @@ export const ActionBlock = ({
         </Center>
       )}
       <Center>
-        <Link href={href} className={classes.action}>
+        <Link href={href} className={classes.action} target={target}>
           {buttonLabel}
         </Link>
       </Center>
