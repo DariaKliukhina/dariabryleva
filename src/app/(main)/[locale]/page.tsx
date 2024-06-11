@@ -2,7 +2,13 @@ import { LanguagesTypes } from "@/types";
 import { homepageQuery } from "~/sanity/cms-queries";
 import { getData } from "~/sanity/sanity-utils";
 import { DEFAULT_LOCALE } from "@/navigation";
-import { ContactsSection, ExperiencePreview, Hero, LeaveReview } from "@/components";
+import {
+  ContactsSection,
+  ContentContainer,
+  ExperiencePreview,
+  Hero,
+  LeaveReview,
+} from "@/components";
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
@@ -33,9 +39,13 @@ export default async function HomePage({
         description={description}
         mainImage={mainImage}
       />
-      <ExperiencePreview list={jobsList} locale={locale} />
-      <LeaveReview description={reviewMessage} />
-      <ContactsSection />
+      <ContentContainer>
+        <>
+          <ExperiencePreview list={jobsList} locale={locale} />
+          <LeaveReview description={reviewMessage} />
+          <ContactsSection />
+        </>
+      </ContentContainer>
     </>
   );
 }
