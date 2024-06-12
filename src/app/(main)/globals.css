@@ -115,6 +115,13 @@ body {
     background-color: var(--mantine-color-dark-10);
     color: var(--mantine-color-white);
   }
+
+  & .accent {
+    color: light-dark(
+      var(--mantine-color-dark-6),
+      var(--mantine-color-light-3)
+    );
+  }
 }
 
 main {
