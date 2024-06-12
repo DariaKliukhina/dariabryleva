@@ -12,7 +12,7 @@
 
 .action {
   font-size: rem(28);
-  padding: rem(30) rem(80);
+  padding: rem(18) rem(50);
   border-radius: rem(60);
   background-color: light-dark(
     var(--mantine-color-light-3),

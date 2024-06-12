@@ -27,6 +27,7 @@
 }
 
 .logo {
+  line-height: 0;
   svg {
     width: rem(36px);
     height: rem(36px);
