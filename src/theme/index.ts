@@ -95,7 +95,7 @@ export const theme = createTheme({
       "#2a1d58",
     ],
     light: [
-      "#fff3f9",
+      "#FFFCFD",
       "#ffe3f3",
       "#ffc7e6",
       "#ff99d0",
@@ -115,7 +115,7 @@ export const theme = createTheme({
   },
   other: {
     zIndex,
-    containerSize: rem(1400),
+    containerSize: rem(1200),
   },
   headings: {
     sizes: {

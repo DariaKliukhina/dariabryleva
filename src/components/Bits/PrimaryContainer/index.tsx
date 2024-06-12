@@ -10,7 +10,7 @@ export const PrimaryContainer = ({ children, ...props }: ContaiernProps) => {
   return (
     <Container
       px={rem(26)}
-      size={theme?.other?.containerSize || "xl"}
+      size={theme?.other?.containerSize || "md"}
       {...props}
     >
       {children}

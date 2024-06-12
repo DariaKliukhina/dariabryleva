@@ -1,3 +1,4 @@
+export * from "./Bits/SectionWrapper";
 export * from "./Bits/ContentContainer";
 export * from "./Bits/PrimaryContainer";
 export * from "./PageLayout";

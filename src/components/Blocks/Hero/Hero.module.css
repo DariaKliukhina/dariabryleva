@@ -32,7 +32,11 @@
   padding-top: rem(20px);
 
   strong {
-    color: hotpink;
+    color: light-dark(
+      var(--mantine-color-dark-6),
+      var(--mantine-color-light-3)
+    );
+    font-weight: 400;
   }
 
   em {
