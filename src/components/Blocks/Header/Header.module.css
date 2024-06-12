@@ -20,15 +20,18 @@
   margin-right: rem(5px);
 }
 
-.iconHome {
-  width: rem(36px);
-  height: rem(36px);
-}
-
 .home {
   display: flex;
   align-items: center;
   gap: rem(10px);
+}
+
+.logo {
+  line-height: 0;
+  svg {
+    width: rem(36px);
+    height: rem(36px);
+  }
 }
 
 .mobileMenu {

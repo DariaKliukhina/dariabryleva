@@ -3,7 +3,7 @@ import React from "react";
 import classes from "./Tag.module.css";
 
 type TagProps = {
-  children: string | React.ReactElement;
+  children: string | React.ReactNode;
 };
 
 export const Tag = ({ children }: TagProps) => {

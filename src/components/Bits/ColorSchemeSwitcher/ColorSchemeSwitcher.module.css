@@ -1,9 +1,17 @@
 .icon {
-  width: rem(16px);
-  height: rem(16px);
+  width: rem(24px);
+  height: rem(24px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
 }
 
 .dark {
+  width: rem(18px);
+  height: rem(18px);
+
   @mixin dark {
     display: none;
   }
@@ -14,8 +22,8 @@
 }
 
 .light {
-  width: rem(18px);
-  height: rem(18px);
+  width: rem(20px);
+  height: rem(20px);
 
   @mixin light {
     display: none;
@@ -23,6 +31,5 @@
 
   @mixin dark {
     display: block;
-    color: var(--mantine-color-white);
   }
 }

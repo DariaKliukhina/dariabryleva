@@ -1,0 +1,13 @@
+.wrapper {
+  padding-top: rem(40px);
+  width: 100%;
+  max-width: 100%;
+}
+
+.top {
+  margin-bottom: rem(20px);
+}
+
+.content {
+  overflow: hidden;
+}

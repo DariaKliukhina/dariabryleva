@@ -18,16 +18,16 @@ export const ActionBlock = ({
 }: ActionBlockProps) => {
   return (
     <Box className={classes.root}>
-      {description && (
-        <Center className={classes.description}>
-          <ProseableText value={description} />
-        </Center>
-      )}
       <Center>
         <Link href={href} className={classes.action} target={target}>
           {buttonLabel}
         </Link>
       </Center>
+      {description && (
+        <Center className={classes.description}>
+          <ProseableText value={description} />
+        </Center>
+      )}
     </Box>
   );
 };

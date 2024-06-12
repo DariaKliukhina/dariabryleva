@@ -3,15 +3,14 @@
 import { Group, Burger, Box, Drawer, Stack } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { PrimaryContainer } from "../../Bits/PrimaryContainer";
-
 import { LangSwitcher } from "../../Bits/LangSwitcher";
 import { LanguagesTypes } from "@/types";
 import { ColorSchemeSwitcher } from "../../Bits/ColorSchemeSwitcher";
-import { IconPlant2 } from "@tabler/icons-react";
 import { Link, usePathname } from "@/navigation";
 import { SocialLinks } from "@/components/Bits/SocialLinks";
 import { useEffect, useState } from "react";
 import classes from "./Header.module.css";
+import LogoSvg from "@/components/Bits/Icons/LogoIcon";
 
 type LinkProps = {
   label: string;
@@ -82,10 +81,12 @@ export const Header = ({
       <PrimaryContainer>
         <Box className={classes.inner}>
           <Link href="/" aria-label="home" className={classes.home}>
-            <IconPlant2 stroke={1.5} className={classes.iconHome} />
+            <Box className={`${classes.logo} accent`}>
+              <LogoSvg />
+            </Box>
             {home}
           </Link>
-          <Group>
+          <Group align="center">
             <Group gap={16} visibleFrom="xs" component="nav">
               {items}
             </Group>
@@ -111,7 +112,7 @@ export const Header = ({
           <Stack justify="space-between" className={classes.mobileMenu}>
             <Box>
               <Link href="/" aria-label="home" className={classes.home}>
-                <IconPlant2 stroke={1.5} className={classes.iconHome} />
+                <LogoSvg />
                 {home}
               </Link>
 

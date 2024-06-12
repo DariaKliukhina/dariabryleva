@@ -4,18 +4,23 @@
 }
 
 .description {
-  margin-bottom: rem(24);
+  margin-top: rem(24);
   p {
     max-width: rem(600);
   }
 }
 
 .action {
-  font-size: rem(22);
-  padding: rem(12) rem(22);
+  font-size: rem(28);
+  padding: rem(18) rem(50);
   border-radius: rem(60);
   background-color: light-dark(
     var(--mantine-color-light-3),
     var(--mantine-color-dark-7)
   );
+
+  @media (max-width: $mantine-breakpoint-md) {
+    font-size: rem(22);
+    padding: rem(20) rem(60);
+  }
 }

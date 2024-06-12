@@ -98,15 +98,29 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
+  position: relative;
 
   @mixin light {
     color: var(--mantine-color-black);
     background-color: var(--mantine-color-light-0);
+    background-image: linear-gradient(
+      180deg,
+      rgba(255, 199, 230, 1) 0px,
+      rgba(255, 252, 253, 1) 1021px
+    );
+    background-repeat: no-repeat;
   }
 
   @mixin dark {
     background-color: var(--mantine-color-dark-10);
     color: var(--mantine-color-white);
+  }
+
+  & .accent {
+    color: light-dark(
+      var(--mantine-color-dark-6),
+      var(--mantine-color-light-3)
+    );
   }
 }
 
@@ -141,7 +155,7 @@ a {
 @define-mixin active {
   &:active {
     color: light-dark(
-      var(--mantine-color-light-4),
+      var(--mantine-color-dark-4),
       var(--mantine-color-light-3)
     );
   }
@@ -156,24 +170,30 @@ a {
 
   &.active-page {
     color: light-dark(
-      var(--mantine-color-light-6),
+      var(--mantine-color-dark-6),
       var(--mantine-color-light-3)
     );
 
     @mixin hover {
       color: light-dark(
-        var(--mantine-color-light-6),
+        var(--mantine-color-dark-6),
         var(--mantine-color-light-3)
       );
     }
   }
 
   &:focus-visible {
-    color: light-dark(var(--mantine-color-dark-6), var(--mantine-color-dark-3));
+    color: light-dark(
+      var(--mantine-color-dark-7),
+      var(--mantine-color-light-4)
+    );
   }
 
   @mixin hover {
-    color: light-dark(var(--mantine-color-dark-6), var(--mantine-color-dark-3));
+    color: light-dark(
+      var(--mantine-color-dark-8),
+      var(--mantine-color-light-4)
+    );
   }
 
   @mixin active;

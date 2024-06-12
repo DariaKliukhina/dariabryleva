@@ -1,11 +1,12 @@
 import {
-  ActionIcon,
   useMantineColorScheme,
   useComputedColorScheme,
+  Box,
 } from "@mantine/core";
-import { IconSun, IconMoon } from "@tabler/icons-react";
 import cx from "clsx";
 import classes from "./ColorSchemeSwitcher.module.css";
+import MoonIcon from "../Icons/MoonIcon";
+import SunIcon from "../Icons/SunIcon";
 
 export const ColorSchemeSwitcher = () => {
   const { setColorScheme } = useMantineColorScheme({
@@ -15,25 +16,17 @@ export const ColorSchemeSwitcher = () => {
     getInitialValueInEffect: true,
   });
 
+  const isLight = computedColorScheme === "light";
+
   return (
-    <ActionIcon
-      onClick={() =>
-        setColorScheme(computedColorScheme === "light" ? "dark" : "light")
-      }
-      variant="subtle"
-      size="md"
-      aria-label="Toggle color scheme"
+    <Box
+      component="button"
+      className={`${classes.icon} accent`}
+      onClick={() => setColorScheme(isLight ? "dark" : "light")}
+      aria-label={isLight ? "dark" : "light"}
     >
-      <IconSun
-        className={cx(classes.icon, classes.light)}
-        stroke={1.5}
-        aria-label="light"
-      />
-      <IconMoon
-        className={cx(classes.icon, classes.dark)}
-        stroke={1.5}
-        aria-label="dark"
-      />
-    </ActionIcon>
+      <SunIcon className={cx(classes.icon, classes.light)} />
+      <MoonIcon className={cx(classes.icon, classes.dark)} />
+    </Box>
   );
 };
