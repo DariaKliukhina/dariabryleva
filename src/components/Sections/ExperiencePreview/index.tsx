@@ -21,16 +21,18 @@ export const ExperiencePreview = ({
     <SectionWrapper title={t("experience")} link="/experience">
       <>
         <Box className={classes.listWrapperDesktop} visibleFrom="xs">
-          <Flex gap={{ base: rem(18) }}>
-            {list?.map((item) => (
-              <Box
-                key={`${item?.company?.companyName}-${item.position}`}
-                className={classes.position}
-              >
-                <ExperienceItemPreview position={item} locale={locale} />
-              </Box>
-            ))}
-          </Flex>
+          <Box className={classes.list}>
+            <Flex gap={{ base: rem(18) }}>
+              {list?.map((item) => (
+                <Box
+                  key={`${item?.company?.companyName}-${item.position}`}
+                  className={classes.position}
+                >
+                  <ExperienceItemPreview position={item} locale={locale} />
+                </Box>
+              ))}
+            </Flex>
+          </Box>
         </Box>
 
         <Stack className={classes.listWrapperMobile} hiddenFrom="xs">
