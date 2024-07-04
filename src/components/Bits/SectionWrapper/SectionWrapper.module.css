@@ -6,8 +6,5 @@
 
 .top {
   margin-bottom: rem(20px);
-}
-
-.content {
-  overflow: hidden;
+  position: relative;
 }
