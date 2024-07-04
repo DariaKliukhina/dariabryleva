@@ -1,12 +1,18 @@
 .root {
-  padding: rem(80) 0;
+  padding: rem(150) 0;
   text-align: center;
+
+  @media (max-width: $mantine-breakpoint-lg) {
+    padding: rem(60) 0;
+  }
 }
 
 .description {
-  margin-top: rem(24);
+  margin-top: rem(18);
   p {
     max-width: rem(600);
+    font-size: rem(14);
+    line-height: rem(16);
   }
 }
 
@@ -16,7 +22,7 @@
   border-radius: rem(60);
   background-color: light-dark(
     var(--mantine-color-light-3),
-    var(--mantine-color-dark-7)
+    var(--mantine-color-dark-5)
   );
 
   @media (max-width: $mantine-breakpoint-md) {
