@@ -1,6 +1,7 @@
 export * from "./Bits/SectionWrapper";
 export * from "./Bits/ContentContainer";
 export * from "./Bits/PrimaryContainer";
+export * from "./Bits/Loading";
 export * from "./PageLayout";
 export * from "./RootStyleRegistry";
 export * from "./Blocks/Header";
