@@ -12,6 +12,7 @@ import {
 import { useForm } from "@mantine/form";
 import classes from "./Contacts.module.css";
 import { useState } from "react";
+import { PrimaryButton } from "@/components/Bits/PrimaryButton";
 
 type ContactsProps = {
   name: string;
@@ -123,7 +124,8 @@ export const Contacts = ({
         </Stack>
 
         <Center mt="md">
-          <Button type="submit">{submit}</Button>
+          {/* <Button type="submit">{submit}</Button> */}
+          <PrimaryButton type="submit">{submit}</PrimaryButton>
         </Center>
       </form>
     </Box>

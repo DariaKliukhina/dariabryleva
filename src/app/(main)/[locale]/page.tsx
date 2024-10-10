@@ -32,20 +32,18 @@ export default async function HomePage({
   } = data;
 
   return (
-    <>
-      <Hero
-        title={title}
-        subtitle={subtitle}
-        description={description}
-        mainImage={mainImage}
-      />
-      <ContentContainer>
-        <>
-          <ExperiencePreview list={jobsList} locale={locale} />
-          <LeaveReview description={reviewMessage} />
-          <ContactsSection />
-        </>
-      </ContentContainer>
-    </>
+    <ContentContainer>
+      <>
+        <Hero
+          title={title}
+          subtitle={subtitle}
+          description={description}
+          mainImage={mainImage}
+        />
+        <ExperiencePreview list={jobsList} locale={locale} />
+        <LeaveReview description={reviewMessage} />
+        <ContactsSection />
+      </>
+    </ContentContainer>
   );
 }
