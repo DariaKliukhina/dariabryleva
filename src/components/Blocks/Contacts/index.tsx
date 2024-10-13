@@ -13,6 +13,8 @@ import { useForm } from "@mantine/form";
 import classes from "./Contacts.module.css";
 import { useState } from "react";
 import { PrimaryButton } from "@/components/Bits/PrimaryButton";
+import { PrimaryTextInput } from "@/components/Bits/FormFields/PrimaryTextInput";
+import { PrimaryTextarea } from "@/components/Bits/FormFields/PrimaryTextarea";
 
 type ContactsProps = {
   name: string;
@@ -98,33 +100,29 @@ export const Contacts = ({
       <form onSubmit={form.onSubmit(handleSubmit)}>
         <Stack gap={rem(4)}>
           <Flex gap={rem(14)} direction={{ base: "column", xs: "row" }}>
-            <TextInput
-              withAsterisk
+            <PrimaryTextInput
+              withAsterisk={true}
               label={email}
               placeholder={emailPlaceholder}
-              className={classes.input}
               {...form.getInputProps("email")}
             />
-            <TextInput
-              withAsterisk
+            <PrimaryTextInput
+              withAsterisk={true}
               label={name}
               placeholder={namePlaceholder}
-              className={classes.input}
               {...form.getInputProps("name")}
             />
           </Flex>
 
-          <Textarea
-            withAsterisk
+          <PrimaryTextarea
+            withAsterisk={true}
             label={message}
             placeholder={messagePlaceholder}
-            className={classes.input}
             {...form.getInputProps("message")}
           />
         </Stack>
 
         <Center mt="md">
-          {/* <Button type="submit">{submit}</Button> */}
           <PrimaryButton type="submit">{submit}</PrimaryButton>
         </Center>
       </form>
