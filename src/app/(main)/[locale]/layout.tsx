@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import { getData } from "~/sanity/sanity-utils";
 import { siteSettingsQuery } from "~/sanity/cms-queries";
-import { PageLayout } from "@/components";
+import { Loading, PageLayout } from "@/components";
 import { LanguagesTypes } from "@/types";
 import { Suspense } from "react";
-import { Loader } from "@mantine/core";
 import "../globals.css";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -37,7 +36,6 @@ export async function generateMetadata(): Promise<Metadata> {
     //   locale: "en_US",
     //   type: "website",
     // },
-
   };
 }
 
@@ -49,7 +47,7 @@ export default function RootLayout({
   params: { locale: LanguagesTypes };
 }) {
   return (
-    <Suspense fallback={<Loader color="violet" />}>
+    <Suspense fallback={<Loading />}>
       <PageLayout locale={locale}>{children}</PageLayout>
     </Suspense>
   );

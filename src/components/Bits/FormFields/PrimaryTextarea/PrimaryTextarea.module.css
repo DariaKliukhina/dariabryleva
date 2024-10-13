@@ -1,0 +1,45 @@
+.root {
+  flex-grow: 1;
+  position: relative;
+  padding-bottom: rem(20);
+
+  & > div {
+    margin: 0;
+  }
+}
+
+.error {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: light-dark(var(--mantine-color-dark-6), var(--mantine-color-light-4));
+}
+
+.wrapper {
+  background-color: transparent;
+}
+
+.input {
+  background-color: transparent;
+  border-color: light-dark(
+    var(--mantine-color-light-4),
+    var(--mantine-color-dark-4)
+  );
+  &::placeholder {
+    color: light-dark(
+      alpha(#000000, 0.6),
+      alpha(var(--mantine-color-light-0), 0.6)
+    ) !important;
+  }
+
+  &[data-error] {
+    border-color: light-dark(
+      var(--mantine-color-dark-6),
+      var(--mantine-color-light-4)
+    );
+  }
+}
+
+.required {
+  color: light-dark(var(--mantine-color-dark-6), var(--mantine-color-light-4));
+}

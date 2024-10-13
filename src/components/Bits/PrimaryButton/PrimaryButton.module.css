@@ -1,0 +1,23 @@
+.root {
+  min-height: rem(40);
+  min-width: rem(125);
+  border-radius: rem(60);
+  transition: .3s;
+  background-color: light-dark(
+    var(--mantine-color-light-3),
+    var(--mantine-color-dark-5)
+  );
+  color: var(--foreground-rgb);
+
+  &:hover {
+    background-color: light-dark(
+      var(--mantine-color-light-4),
+      var(--mantine-color-dark-4)
+    );
+    color: var(--mantine-color-white)
+  }
+}
+
+.label {
+  font-weight: 400;
+}

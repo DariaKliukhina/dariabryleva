@@ -6,6 +6,15 @@
   justify-content: center;
   background: none;
   border: none;
+  cursor: pointer;
+  transition: .2s;
+
+  &:hover {
+    color: light-dark(
+      var(--mantine-color-dark-7),
+      var(--mantine-color-light-4)
+    );
+  }
 }
 
 .dark {
