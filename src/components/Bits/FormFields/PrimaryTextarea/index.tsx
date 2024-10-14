@@ -1,16 +1,26 @@
-import React from 'react'
-import { Textarea } from '@mantine/core'
-import classes from "./PrimaryTextarea.module.css"
+import React from "react";
+import { Textarea } from "@mantine/core";
+import classes from "./PrimaryTextarea.module.css";
 
-export const PrimaryTextarea = ({label="", placeholder="", withAsterisk=false, ...props}) => {
+type PrimaryTextareaProps = {
+  label?: string;
+  placeholder?: string;
+  withAsterisk?: boolean;
+};
+
+export const PrimaryTextarea = ({
+  label = "",
+  placeholder = "",
+  withAsterisk = false,
+  ...props
+}: PrimaryTextareaProps) => {
   return (
     <Textarea
-    withAsterisk={withAsterisk}
-    label={label}
-    placeholder={placeholder}
-    classNames={classes}
-    {...props}
-  />
-  )
-}
-
+      withAsterisk={withAsterisk}
+      label={label}
+      placeholder={placeholder}
+      classNames={classes}
+      {...props}
+    />
+  );
+};

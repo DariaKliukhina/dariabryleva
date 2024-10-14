@@ -1,4 +1,4 @@
-import { AboutSection, ContentContainer } from "@/components";
+import { AboutSection, FullPageWrapper } from "@/components";
 import { DEFAULT_LOCALE } from "@/navigation";
 import { LanguagesTypes } from "@/types";
 import { aboutQuery } from "~/sanity/cms-queries/about";
@@ -18,8 +18,8 @@ export default async function AboutPage({
   });
 
   return (
-    <ContentContainer>
+    <FullPageWrapper>
       <AboutSection {...data} />
-    </ContentContainer>
+    </FullPageWrapper>
   );
 }

@@ -1,4 +1,4 @@
-import { ReviewFormSection } from "@/components";
+import { FullPageWrapper, ReviewFormSection } from "@/components";
 import { LanguagesTypes } from "@/types";
 
 type PageParams = {
@@ -10,5 +10,9 @@ export default async function LeaveReviewPage({
 }: {
   params: PageParams;
 }) {
-  return <ReviewFormSection />;
+  return (
+    <FullPageWrapper>
+      <ReviewFormSection />
+    </FullPageWrapper>
+  );
 }

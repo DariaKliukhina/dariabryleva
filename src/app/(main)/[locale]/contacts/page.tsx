@@ -1,4 +1,4 @@
-import { ContactsSection } from "@/components";
+import { ContactsSection, FullPageWrapper } from "@/components";
 import { LanguagesTypes } from "@/types";
 
 type PageParams = {
@@ -10,5 +10,9 @@ export default async function ContactsPage({
 }: {
   params: PageParams;
 }) {
-  return <ContactsSection />;
+  return (
+    <FullPageWrapper>
+      <ContactsSection />
+    </FullPageWrapper>
+  );
 }
