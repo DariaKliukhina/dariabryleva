@@ -2,7 +2,7 @@
   width: 100%;
   padding: var(--mantine-spacing-xxl) 0;
   text-align: center;
-  min-height: calc(100vh - rem(44));
+  min-height: calc(100vh - rem(84));
 
   @media (max-width: $mantine-breakpoint-xs) {
     padding: var(--mantine-spacing-xl) 0;

@@ -1,5 +1,9 @@
-import { NotFoundSection } from "@/components";
+import { FullPageWrapper, NotFoundSection } from "@/components";
 
 export default function NotFound() {
-  return <NotFoundSection />;
+  return (
+    <FullPageWrapper>
+      <NotFoundSection />
+    </FullPageWrapper>
+  );
 }

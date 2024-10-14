@@ -1,5 +1,6 @@
 export * from "./Bits/FormFields/PrimaryTextInput";
 export * from "./Bits/FormFields/PrimaryTextarea";
+export * from "./Bits/FullPageWrapper";
 export * from "./Bits/PrimaryButton";
 export * from "./Bits/SectionWrapper";
 export * from "./Bits/ContentContainer";
