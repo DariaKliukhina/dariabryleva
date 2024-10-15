@@ -1,23 +1,7 @@
-.wrapper {
-  padding-top: rem(40px);
-}
-
-.position {
-  max-width: rem(300px);
-  flex-shrink: 0;
-}
-
-.top {
-  margin-bottom: rem(20px);
-}
-
-.list {
-  overflow: hidden;
-}
-
-.listWrapperDesktop {
+.listWrapper {
   max-width: 100%;
   position: relative;
+  /* padding-right: 100px; */
 
   &::before,
   &::after {
@@ -26,6 +10,8 @@
     height: 120%;
     position: absolute;
     top: 50%;
+    z-index: 50;
+    pointer-events: none;
   }
 
   &::before {
@@ -68,5 +54,17 @@
         rgba(42, 29, 88, 1) 100%
       )
     );
+  }
+}
+
+.start {
+  &::before {
+    display: none;
+  }
+}
+
+.end {
+  &::after {
+    display: none;
   }
 }

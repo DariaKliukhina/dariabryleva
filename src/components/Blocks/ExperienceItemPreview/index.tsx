@@ -13,13 +13,14 @@ import { WorkDates } from "@/components/Bits/WorkDates";
 type ExperienceItemPreviewProps = {
   position: PositionPreview;
   locale: LanguagesTypes;
+  locales: any;
 };
 
 export const ExperienceItemPreview = ({
   position,
   locale,
+  locales
 }: ExperienceItemPreviewProps) => {
-  const t = useTranslations("Experience");
   const { company, position: positionTitle, startDate, endDate } = position;
   const { companyLogo, companyName, link } = company;
 
@@ -50,7 +51,7 @@ export const ExperienceItemPreview = ({
             <WorkDates
               startDate={startDate}
               endDate={endDate}
-              title={t("present")}
+              title={locales?.present}
             />
             <AdaptedDate date={totalMonth} locale={locale} />
           </Box>
