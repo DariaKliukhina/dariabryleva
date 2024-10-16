@@ -26,8 +26,8 @@ export const Hero = ({
         align="center"
         maw={{ base: rem(500), lg: rem(500), xl: rem(600) }}
       >
-        {mainImage && (
-          <Box className={classes.imageWrapper}>
+        <Box className={classes.imageWrapper}>
+          {mainImage && (
             <Image
               src={sanityImageUrl(mainImage).url()}
               width={350}
@@ -35,8 +35,8 @@ export const Hero = ({
               alt={title || ""}
               priority
             />
-          </Box>
-        )}
+          )}
+        </Box>
         <Box>
           {title && (
             <Title order={2} size={rem(36)} className={classes.title}>
