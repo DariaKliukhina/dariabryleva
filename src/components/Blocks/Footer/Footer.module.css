@@ -1,5 +1,6 @@
 .root {
   padding: rem(8px) 0;
+  font-size: rem(14);
   border-top: 1px solid
     light-dark(var(--mantine-color-light-2), var(--mantine-color-dark-3));
 }

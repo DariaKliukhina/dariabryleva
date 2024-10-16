@@ -12,7 +12,7 @@ const links = [
   },
   {
     name: "github",
-    href: "https://github.com/DariaKliukhina/dariabryleva",
+    href: "https://github.com/DariaKliukhina",
     icon: <GithubIcon />,
   },
 ];

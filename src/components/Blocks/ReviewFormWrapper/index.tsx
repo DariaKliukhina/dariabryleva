@@ -33,7 +33,7 @@ export const ReviewFormWrapper = ({ data }: ReviewFormWrapperProps) => {
   return (
     <Center>
       <Box className={classes.root}>
-        <Title size={rem(38)} className={classes.title}>
+        <Title size={rem(28)} order={2} className={classes.title}>
           {isSent ? data.success : data.title}
         </Title>
         {!isSent && <ReviewForm {...data} onSuccess={onSuccess} />}

@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import { getData } from "~/sanity/sanity-utils";
 import { siteSettingsQuery } from "~/sanity/cms-queries";
-import { Loading, PageLayout } from "@/components";
+import { PageLayout } from "@/components";
 import { LanguagesTypes } from "@/types";
-import { Suspense } from "react";
 import "../globals.css";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -46,9 +45,5 @@ export default function RootLayout({
   children: React.ReactNode;
   params: { locale: LanguagesTypes };
 }) {
-  return (
-    <Suspense fallback={<Loading />}>
-      <PageLayout locale={locale}>{children}</PageLayout>
-    </Suspense>
-  );
+  return <PageLayout locale={locale}>{children}</PageLayout>;
 }

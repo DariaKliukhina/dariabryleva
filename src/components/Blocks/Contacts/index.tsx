@@ -99,7 +99,7 @@ export const Contacts = ({
     >
       <form onSubmit={form.onSubmit(handleSubmit)}>
         <Stack gap={rem(4)}>
-          <Flex gap={rem(14)} direction={{ base: "column", xs: "row" }}>
+          <Flex gap={{base: rem(4), xs: rem(14)}} direction={{ base: "column", xs: "row" }}>
             <PrimaryTextInput
               withAsterisk={true}
               label={email}

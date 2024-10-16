@@ -2,6 +2,6 @@
     padding: rem(150) 0;
 
     @media (max-width: $mantine-breakpoint-lg) {
-      padding: rem(60) 0;
+      padding: rem(120) 0;
     }
 }
