@@ -24,7 +24,7 @@ export const SocialLinks = () => {
         <Link
           href={link.href}
           key={link.name}
-          aria-label={link.name}
+          // aria-label={link.name}
           target="_blank"
           className={classes.link}
         >

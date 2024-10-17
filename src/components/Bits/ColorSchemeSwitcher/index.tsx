@@ -23,7 +23,7 @@ export const ColorSchemeSwitcher = () => {
       component="button"
       className={`${classes.icon} accent`}
       onClick={() => setColorScheme(isLight ? "dark" : "light")}
-      aria-label={isLight ? "dark" : "light"}
+      // aria-label={isLight ? "dark" : "light"}
     >
       <SunIcon className={cx(classes.icon, classes.light)} />
       <MoonIcon className={cx(classes.icon, classes.dark)} />

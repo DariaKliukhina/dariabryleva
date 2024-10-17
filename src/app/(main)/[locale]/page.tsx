@@ -3,12 +3,16 @@ import { homepageQuery } from "~/sanity/cms-queries";
 import { getData } from "~/sanity/sanity-utils";
 import { DEFAULT_LOCALE } from "@/navigation";
 import {
+  Animation,
   ContactsSection,
   ContentContainer,
   ExperiencePreview,
   Hero,
   LeaveReview,
 } from "@/components";
+import { Box } from "@mantine/core";
+import classes from "./page.module.css";
+
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
@@ -32,18 +36,27 @@ export default async function HomePage({
   } = data;
 
   return (
-    <ContentContainer>
-      <>
-        <Hero
-          title={title}
-          subtitle={subtitle}
-          description={description}
-          mainImage={mainImage}
-        />
-        <ExperiencePreview list={jobsList} locale={locale} />
-        <LeaveReview description={reviewMessage} />
-        <ContactsSection />
-      </>
-    </ContentContainer>
+    <>
+      <Box className={classes.wrapper}>
+        <Box className={classes.animationWrapper}>
+          <Animation />
+        </Box>
+        <ContentContainer>
+          <Hero
+            title={title}
+            subtitle={subtitle}
+            description={description}
+            mainImage={mainImage}
+          />
+        </ContentContainer>
+      </Box>
+      <ContentContainer>
+        <>
+          <ExperiencePreview list={jobsList} locale={locale} />
+          <LeaveReview description={reviewMessage} />
+          <ContactsSection />
+        </>
+      </ContentContainer>
+    </>
   );
 }

@@ -8,6 +8,7 @@ export * from "./Bits/PrimaryContainer";
 export * from "./Bits/Loading";
 export * from "./PageLayout";
 export * from "./RootStyleRegistry";
+export * from "./Blocks/Animation";
 export * from "./Blocks/Header";
 export * from "./Blocks/Hero";
 export * from "./Blocks/ActionBlock";

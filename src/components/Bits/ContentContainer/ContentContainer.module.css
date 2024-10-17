@@ -3,6 +3,7 @@
   margin: 0 auto;
   padding: rem(40) 0;
   width: rem(800px);
+  position: relative;
 
   @media (max-width: $mantine-breakpoint-lg) {
     width: 100%;
